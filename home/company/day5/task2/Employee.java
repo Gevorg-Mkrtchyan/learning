@@ -1,5 +1,14 @@
 package home.company.day5.task2;
 
+/**
+ * 2. Define Employee class which
+ *  Has fields id, name, department, age, gender
+ *  define all argument constructor
+ *  write method which will print all information about employee
+ *  create 5 employee objects(3 male and 2 female)
+ *  3 of them are working in same department
+ *  print all info about them
+ */
 public class Employee {
     int id;
     String name;
@@ -15,7 +24,7 @@ public class Employee {
         this.garden = garden;
     }
 
-    public void write() {
+    public void allInfoEmployee() {
         System.out.println("Employee id  = " + id + "Employee name = " + name + "Employee department "
                 + department + " Employee age = " + age + "Employee garden =" + garden);
     }

@@ -7,10 +7,10 @@ public class EmployeeTest {
         Employee employee3 = new Employee(1, "Rob", "accounting", 21, 'm');
         Employee employee4 = new Employee(1, "Jenifer", "accounting", 52, 'f');
         Employee employee5 = new Employee(1, "Qim", "programing", 21, 'f');
-        employee1.write();
-        employee2.write();
-        employee3.write();
-        employee4.write();
-        employee5.write();
+        employee1.allInfoEmployee();
+        employee2.allInfoEmployee();
+        employee3.allInfoEmployee();
+        employee4.allInfoEmployee();
+        employee5.allInfoEmployee();
     }
 }
