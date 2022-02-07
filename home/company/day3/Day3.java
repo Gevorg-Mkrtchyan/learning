@@ -1,9 +1,9 @@
-package homework.home;
+package home.company.day3;
 
 import java.util.Random;
 import java.util.Scanner;
 
-public class Day2 {
+public class Day3 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
@@ -135,4 +135,5 @@ public class Day2 {
 //        System.out.println(a + " : " + b);
 
     }
+
 }
