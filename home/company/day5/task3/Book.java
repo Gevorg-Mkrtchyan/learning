@@ -10,31 +10,26 @@ package home.company.day5.task3;
  *  print all info about books
  */
 public class Book {
-    String name;
+    String nameBook;
     Author author;
     int price;
 
-    public Book(String name, Author author, int price) {
-        this.name = name;
+    public Book(String nameBook, Author author, int price) {
+        this.nameBook = nameBook;
         this.author = author;
         this.price = price;
     }
 
-    public Book(String name, Author author) {
-        this.name = name;
-        this.author = author;
-    }
-
     public void bookInfo() {
-        System.out.println("Book name =" + name + " Book author =" + author.name + "Book price" + price);
+        System.out.println((" Book name = " + nameBook + " Book price = " + price));
     }
 
     public void showResult() {
-        System.out.println("Book name = " + name + " Author email = " + author.email);
+        System.out.println(" name = " + nameBook + " Author email = " + author.email);
     }
 
     public void allInfoBook() {
-        System.out.println("Book name =" + name + " Book author =" + author.name + "Book price"
+        System.out.println(" name = " + nameBook + " Book author =" + author.name + "Book price ="
                 + price + " Author email = " + author.email);
     }
 }
