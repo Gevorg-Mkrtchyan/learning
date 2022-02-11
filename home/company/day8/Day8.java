@@ -369,27 +369,27 @@ public class Day8 {
      * decision ,print “Can&#39;t be”.
      */
 //    public void decisions(int a, int b, int c) {
-//        double x;
-//        double y;
-//        boolean bool = false;
-//        System.out.print(" number a - ");
-//        a = scanner.nextInt();
-//        System.out.print(" number b - ");
-//        b = scanner.nextInt();
-//        System.out.print(" number c - ");
-//        c = scanner.nextInt();
-//        double d = b * 4 - 4 * a * c;
-//        System.out.println("all Decisions - ");
-//        if (d >= 0) {
-//            x = (-b + Math.sqrt(d)) / 2 * a;
-//            System.out.println("x value is -" + x);
-//            y = (-b - Math.sqrt(d)) / 2 * a;
-//            System.out.println("y value is -" + y);
-//        }
-//        else {
-//            System.out.println("Can't be: " + bool );
-//        }
-//    }
+////        double x;
+////        double y;
+////        boolean bool = false;
+////        System.out.print(" number a - ");
+////        a = scanner.nextInt();
+////        System.out.print(" number b - ");
+////        b = scanner.nextInt();
+////        System.out.print(" number c - ");
+////        c = scanner.nextInt();
+////        double d = b * 4 - 4 * a * c;
+////        System.out.println("all Decisions - ");
+////        if (d >= 0) {
+////            x = (-b + Math.sqrt(d)) / 2 * a;
+////            System.out.println("x value is -" + x);
+////            y = (-b - Math.sqrt(d)) / 2 * a;
+////            System.out.println("y value is -" + y);
+////        }
+////        else {
+////            System.out.println("Can't be: " + bool );
+////        }
+////    }
     /**
      * 17.Given 3 integer values arrange them in non-decreasing order.
      * a&lt;= b &lt;= c.
