@@ -40,7 +40,7 @@ public class Day8 {
      *    bound)
      */
 //    public  void generate() {
-//        int random = (int) (Math.random() * (7 - 2) + 2);
+//        int random = (int) (Math.random() * 6) + 2);
 //        System.out.println(random);
 //    }
     /**
@@ -258,12 +258,42 @@ public class Day8 {
 //    public void value(int a, int b) {
 //        a = scanner.nextInt();
 //        b = scanner.nextInt();
-//        int c = a - b;
-//        int sum = (int) (Math.random() * (a - b));
-//        if ((a % 7 == 0 | b % 7 == 0) & (a > 0 & b > 0) & a > b) {//Todo // I can not write this code without loop
+//        int c = 0;
+//        int d = 0;
+//        if ((a % 7 == 0 || b % 7 == 0) && (a > 0 && b > 0) && a > b) {
+//            c = b;
+//            if (b % 2 == 0) {
+//                ++c;
+//            } else {
+//                c += 2;
+//            }
+//            while (c < a) {
+//                System.out.println(c);
+//                c += 2;
+//            }
+//        } else {
+//            c = 0;
+//            d = 0;
+//            if (a > b) {
+//                c = b;
+//                d = a;
+//            } else if (a < b) {
+//                c = a;
+//                d = b;
+//            } else {
+//                System.out.println("number is equal");
+//            }
+//            if (c % 2 == 0) {
+//                c += 2;
+//            } else {
+//                c++;
+//            }
+//            while (c < d) {
+//                System.out.println(c);
+//                c += 2;
+//            }
 //        }
-//}
-
+//    }
     /**
      * 13. Given coordinates of two points in the coordinate plane.Write
      * java program to check if the points lie in the same plane?(quarter)
@@ -307,7 +337,7 @@ public class Day8 {
 //        x = scanner.nextInt();
 //        y = scanner.nextInt();
 //        z = scanner.nextInt();
-//        if (x + y > z && x + z > y && y + z > x) {
+//        if (x + y >= z && x + z >= y && y + z >= x) {
 //            System.out.println("yes");
 //        } else {
 //            System.out.println("no");
@@ -318,21 +348,48 @@ public class Day8 {
      * 15.Given 3 numbers, print count of numbers that equals to each
      * other.(Input numbers from console)Example`
      * Input numbers`
-     * int result = thirdNum % 10 + secondNum / 10 % 10 + firstNum / 100;
+     * a>b,a>c a=b a = c b>c B<c b =c
      */
-//    public void giveNum(int a,int b,int c){
-//     a = scanner.nextInt();
-//     b = scanner.nextInt();
-//     c = scanner.nextInt();
-//     int first,second,third; //Todo
-//
+//    public void giveNum(int a, int b, int c) {
+//        a = scanner.nextInt();
+//        b = scanner.nextInt();
+//        c = scanner.nextInt();
+//        if (a == b && b == c) {
+//            System.out.println( " 3 ");
+//        } else if (a == c || c == b || a == b) {
+//            System.out.println("2");
+//        } else {
+//            System.out.println("0");
+//        }
 //    }
+
     /**
      * 16.Given 3 real numbers a , b , c .FInd all decisions for
      * ax2 + bx + c = 0.Print all decisions, if there is not a
      * decision ,print “Can&#39;t be”.
      */
-//Todo
+//    public void decisions(int a, int b, int c) {
+//        double x;
+//        double y;
+//        boolean bool = false;
+//        System.out.print(" number a - ");
+//        a = scanner.nextInt();
+//        System.out.print(" number b - ");
+//        b = scanner.nextInt();
+//        System.out.print(" number c - ");
+//        c = scanner.nextInt();
+//        double d = b * 4 - 4 * a * c;
+//        System.out.println("all Decisions - ");
+//        if (d >= 0) {
+//            x = (-b + Math.sqrt(d)) / 2 * a;
+//            System.out.println("x value is -" + x);
+//            y = (-b - Math.sqrt(d)) / 2 * a;
+//            System.out.println("y value is -" + y);
+//        }
+//        else {
+//            System.out.println("Can't be: " + bool );
+//        }
+//    }
     /**
      * 17.Given 3 integer values arrange them in non-decreasing order.
      * a&lt;= b &lt;= c.

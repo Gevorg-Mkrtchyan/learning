@@ -14,8 +14,11 @@ public class TestDay8 {
 //        day8.leap(2004); // task9
 //        day8.numbers(8); //task 10
 //        day8.numEquals(1,2); //task 11
+//        day8.value(1,2); // task 12
 //        day8.quadrant(4, 6); //task 13
 //        day8.triangle(1,2,3);// task  14
+//        day8.giveNum(1, 2, 3); // task 15
+//        day8.decisions(1,2,3);
 //        day8.giveNumbers(1, 2, 3);// task 17
     }
 }
