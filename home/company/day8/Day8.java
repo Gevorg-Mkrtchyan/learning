@@ -448,6 +448,6 @@ public class Day8 {
 //                min = a;
 //            }
 //        }
-//        System.out.println("sorted number " + max + med + min);
+//        System.out.println("sorted number " + "\n" + min + "\n" + med +"\n" + max);
 //    }
 }
