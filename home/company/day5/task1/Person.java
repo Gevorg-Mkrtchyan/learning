@@ -1,4 +1,4 @@
-package home.company.day5.task1;
+package home.company.day5.task2;
 
 /**
  * 1. Define a Person class which

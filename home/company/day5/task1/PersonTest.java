@@ -1,4 +1,4 @@
-package home.company.day5.task1;
+package home.company.day5.task2;
 
 public class PersonTest {
     public static void main(String[] args) {
