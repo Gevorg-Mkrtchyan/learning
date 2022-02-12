@@ -2,7 +2,7 @@ package home.company.day9;
 
 public class TestDay9 {
     public static void main(String[] args) {
-        Day9 day9 = new Day9();
+//        Day9 day9 = new Day9();
 //        day9.equalsStr(); // task 1
 //        day9.equalsString(); // task 2
 //        day9.ternary(6); // task 3
