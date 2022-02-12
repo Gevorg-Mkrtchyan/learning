@@ -1,7 +1,7 @@
 package home.company.day9;
 
 public class TestDay9 {
-    public static void main(String[] args) {
+//    public static void main(String[] args) {
 //        Day9 day9 = new Day9();
 //        day9.equalsStr(); // task 1
 //        day9.equalsString(); // task 2
@@ -16,5 +16,5 @@ public class TestDay9 {
 //        day9.calculator(4,5); // task 11
 //        day9.weekDays(5); // task 12
 //        day9.scores(1,2,3,); // task 13
-    }
+//    }
 }
