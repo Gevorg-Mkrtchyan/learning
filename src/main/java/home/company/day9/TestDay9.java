@@ -6,8 +6,8 @@ public class TestDay9 {
 //        day9.equalsStr(); // task 1
 //        day9.equalsString(); // task 2
 //        day9.ternary(6); // task 3
-        day9.maxValue(8,7); // task 4
-        day9.absValue(8); // task 5
+//        day9.maxValue(8,7); // task 4
+//        day9.absValue(8); // task 5
 //        day9.sizeStr(null); // task 6
 //        day9.maxNum(1,2,3); // task 7
 //        day9.answerOfQuest(""); // task 8
