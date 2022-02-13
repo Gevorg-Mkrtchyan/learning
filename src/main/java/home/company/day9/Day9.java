@@ -47,16 +47,29 @@ public class Day9 {
      * 4 Using ternary operator`
      * - - achieve Math.max(a,b) function
      * - - achieve Math.abs(a) function
+     *
      * @param a
      * @param b
      */
-//    public void maxOrAbs(int a, int b) {
+//    public void maxValue(int a, int b) {
 //        a = scanner.nextInt();
 //        b = scanner.nextInt();
-//        System.out.println(a > b ? Math.max(a, b) : Math.abs(a));
+//        int max = (a > b) ? a : b;
+//        System.out.println("max number between " + a + " or " + b + " is " + max);
 //    }
+
     /**
-     * 5 Using ternary operator check if the given String
+     * 5 Using ternary operator`
+     * - - achieve Math.abs(a) function
+     * @param value
+     */
+//    public void absValue(int value) {
+//        value = scanner.nextInt();
+//        System.out.println("please enter the number  negative number or positive ");
+//        System.out.println(value < 0 ? Math.abs(value) : value);
+//    }
+    /**)
+     * 6 Using ternary operator check if the given String
      * - - is a null so return -1
      * - - if given String is “ ” return 0
      * - - else return 1
@@ -67,7 +80,7 @@ public class Day9 {
 //    }
 
     /**
-     * 6 Write a java program to find maximum from a given 3 integer numbers using ternary
+     * 7 Write a java program to find maximum from a given 3 integer numbers using ternary
      * operator.Input numbers from console
      * @param a
      * @param b
@@ -82,7 +95,7 @@ public class Day9 {
 //    }
 
     /**
-     * 7.Write a Java program that allows the user to choose the correct answer of a question.If
+     * 8.Write a Java program that allows the user to choose the correct answer of a question.If
      * he choose correct answer Print “Congratulation”,
      * in case of illegal choice print “Invalide choice”.
      * Example`
@@ -96,8 +109,8 @@ public class Day9 {
      */
 
 //    public void answerOfQuest(String a) {
-//        System.out.println(" choose the correct answer of a question.");
-//        System.out.println(" which is the  largest primitive type of the above");
+//        System.out.println(" choose the correct answer of a question.  " +
+//                "which is the  largest primitive type of the above");
 //        System.out.println(" a - int \n b - short \n c - long \n d - float ");
 //        a = scanner.next();
 //        switch (a) {
@@ -105,10 +118,10 @@ public class Day9 {
 //                System.out.println("Invalid choice");
 //                break;
 //            case "b":
-//                System.out.println("Invalid choice");
+//                System.out.println("Invalid choice ");
 //                break;
 //            case "c":
-//                System.out.println("Invalid choice");
+//                System.out.println("Invalid  choice");
 //                break;
 //            case "d":
 //                System.out.println("Congratulation");
@@ -119,7 +132,7 @@ public class Day9 {
 //    }
 
     /**
-     * 8.Write Java Program to check Vowel or Consonant using Switch Case.
+     * 9.Write Java Program to check Vowel or Consonant using Switch Case.
      * Example`
      * Enter a character :
      * A
@@ -129,45 +142,30 @@ public class Day9 {
      */
 //    public void vowelOrCon(String a) {
 //        System.out.println("write the letter and the programing will \n" +
-//                "say whether it is a vowel or a consonant" + " from a to j");
+//                "say whether it is a vowel or a consonant");
 //            a = scanner.next();
 //            switch (a) {
 //                case "a":
 //                    System.out.println("a is vowel");
 //                    break;
-//                case "b":
-//                    System.out.println("b is consonant");
-//                    break;
-//                case "c":
-//                    System.out.println("c is consonant");
-//                    break;
-//                case "d":
-//                    System.out.println("d is consonant");
-//                    break;
 //                case "e":
-//                    System.out.println("e is vowel");
-//                    break;
-//                case "f":
-//                    System.out.println("f is consonant");
-//                    break;
-//                case "g":
-//                    System.out.println("g is consonant");
-//                    break;
-//                case "h":
-//                    System.out.println("h is consonant");
+//                    System.out.println("b is vowel");
 //                    break;
 //                case "i":
 //                    System.out.println("i is vowel");
 //                    break;
-//                case "j":
-//                    System.out.println("j is consonant");
+//                case "o":
+//                    System.out.println("o is vowel");
+//                    break;
+//                case "u":
+//                    System.out.println("u is vowel");
 //                    break;
 //                default:
-//                    System.out.println("the letter is out of range");
+//                    System.out.println("the letter  is consonant");
 //            }
 //        }
     /**
-     * 9. If the user pressed number keys( from 0 to 9), the program will tell the number that is
+     * 10. If the user pressed number keys( from 0 to 9), the program will tell the number that is
      * pressed, otherwise, the program will show "Not allowed".
      * @param number
      */
@@ -227,7 +225,7 @@ public class Day9 {
 //    }
 
     /**
-     * 11 Program to make a calculator using switch case in Java
+     * 12 Program to make a calculator using switch case in Java
      * In this Program we are making a simple calculator that performs addition, subtraction, multiplication and
      * division based on the user input. The program takes the value of both the numbers (entered by user) and
      * then user is asked to enter the operation (+, -, * and /), based on the input program performs the selected
@@ -273,7 +271,7 @@ public class Day9 {
 //    }
 
     /**
-     * 12.Given the String variable day holding the name of the weekday Sunday, Monday,
+     * 13.Given the String variable day holding the name of the weekday Sunday, Monday,
      * etc., set an int variable to 1, 2,etc.
      * @param days
      */
@@ -321,16 +319,39 @@ public class Day9 {
      * Output`
      * Your grade is B.
      * Use switch statement
+     *
      * @param quiz
      * @param mid_term
      * @param final_scores
      */
+
+    // switch- option
 //    public void scores(int quiz, int mid_term, int final_scores) {
 //        System.out.println("please enter Quiz score and Mid-term score: and final scores");
 //        quiz = scanner.nextInt();
 //        mid_term = scanner.nextInt();
 //        final_scores = scanner.nextInt();
 //        int scores = (quiz + mid_term + final_scores) / 3;
+//        switch (scores / 10) {
+//            case 8:
+//            case 9:
+//            case 10:
+//                System.out.println(scores + " = grade = A ");
+//                break;
+//            case 7:
+//            case 6:
+//                System.out.println(scores + " = grade = B");
+//                break;
+//            case 5:
+//            case 4:
+//                System.out.println(scores + " = grade = c");
+//                break;
+//            default:
+//                System.out.println(scores + " = grade = f");
+//        }
+//    }
+
+    // if- option
 //        if (scores >= 80) {
 //            System.out.println(scores + " = grade = A");
 //        } else if (scores >= 60) {
@@ -340,5 +361,4 @@ public class Day9 {
 //        } else {
 //            System.out.println(scores + " = grade = f");
 //        }
-//    }
 }
