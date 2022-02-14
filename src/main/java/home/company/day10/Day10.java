@@ -160,18 +160,134 @@ public class Day10 {
 //        }
 //        System.out.println(k + " - " + count);
 //    }
+
     /**
-     *10.Write Java program to print the table of characters that are
+     * 10.Write Java program to print the table of characters that are
      * equivalent to the Ascii codes from 32 to 122.Print 10 characters
      * at each line.
      */
-//    public void charEvoluation(){
-//        int start = 32;
+//    public void changeChar() {
 //        int end = 122;
-//        while (start <= end){
-//
+//        int start = 32;
+//        while (start <= end) {
+//            start++;
+//            if (start % 10 == 2) {
+//                System.out.print(" \n ");
+//            }
+//            System.out.print(" " + (char) start);
 //        }
 //    }
 
+    /**
+     * 11.Print all integer numbers from 1 to N, except that are multiple of
+     * 3(Input N from console)
+     * System.out.println(i);
+     * }
+     * @param number
+     */
+//    public void notMultiple3(int number) {
+//        System.out.println("enter number");
+//        number = scanner.nextInt();
+//        int range = 0;
+//        while (range < number) {
+//            range++;
+//            if (range % 3 == 0) {
+//                continue;
+//            }
+//            System.out.println(range);
+//        }
+//    }
+
+    /**
+     * 12.Given integer number A &gt; 1,define what is the Fibonacci number
+     * is A, i.e print such number n that φn=A.If A is not a Fibonacci
+     * number print -1. Example
+     * Input 8
+     * Output 6
+     * Input 10
+     * Output -1
+     * @param fib
+     */
+//    public void fibonacci(int fib) {
+//        fib = scanner.nextInt();
+//        int num1 = 0;
+//        int num2 = 1;
+//        int num3 = num1 + num2;
+//        int count = 1;
+//        while (num3 != fib) {
+//            if (num3 > fib) {
+//                System.out.println("-1");
+//                break;
+//            } else {
+//                num3 = num1 + num2;
+//                num1 = num2;
+//                num2 = num3;
+//            }
+//            count++;
+//        }
+//        System.out.println(count);
+//    }
+
+    /**
+     * 13.On the first day, the athlete ran x kilometers,and then every day
+     * he increased the mileage by 10% from the previous value,Given the
+     * number y, determine the number of the day for which the athlete&#39;s
+     * mileage will be at least y kilometers.
+     * Example` Input 10 Output 9
+     * System.out.println(i);
+     * }
+     * 20
+     */
+//    public void athlete() {
+//        int count = 0;
+//        double b1 = scanner.nextDouble();
+//        double q = 0.1;
+//        while (q < b1){
+//            q++;
+//            count++;
+//        }
+//        System.out.println(count);
+//    }//Todo
+    /**
+     *14.The deposit in the bank is x dollars. It increases annually by p
+     * percent, after which the fractional part of cents is discarded.
+     *
+     * Determine how many years the contribution(ներդրում) will be at
+     * least y dollars.(Input x , p , y from console) Example `
+     *
+     * Input ` Output ` 8
+     * 100
+     * 10
+     * 200
+     */
+//    public void depositPercent(){
+//        System.out.println("enter how many dollar");
+//        double x = scanner.nextDouble();
+//        System.out.println("enter the percent");
+//        double p = scanner.nextDouble();
+//        System.out.println("enter the years");
+//        double y = scanner.nextDouble();
+//        int years = 0;
+//        while (x< y){
+//            x+=p*x;
+//            years++;
+//        }
+//        System.out.println(years);
+//    } //Todo
+    /**
+     *17. Write a Java Program to Compute the Sum of Digits in a given
+     * Integer.
+     */
+//    public void sumDigits(){
+//        int a = scanner.nextInt();
+//        int b;
+//        int c = 0;
+//        while (a != 0){
+//         b = a %10;
+//         c = c + b;
+//         a = a/10;
+//        }
+//        System.out.println("Sum of Digits:"+c);
+//    }
 }
 

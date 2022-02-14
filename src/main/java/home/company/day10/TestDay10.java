@@ -12,6 +12,12 @@ public class TestDay10 {
 //        day10.allMultiple(5); //task 7
 //        day10.calculatorSquare(); //task8
 //        day10.smallPow(5); // task 9
+//        day10.changeChar(); //task 10
+//        day10.notMultiple3(5); task 11
+//        day10.fibonacci(5); task 12
+//        day10.athlete(); task 13 //Todo
+//        day10.depositPercent();//14 //Todo
 
+//        day10.sumDigits();// task 17
     }
 }
