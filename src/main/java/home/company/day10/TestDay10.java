@@ -17,7 +17,7 @@ public class TestDay10 {
 //        day10.fibonacci(5); task 12
 //        day10.athlete(); task 13 //Todo
 //        day10.depositPercent();//14 //Todo
-
+//        day10.randNum(5);//task16
 //        day10.sumDigits();// task 17
     }
 }

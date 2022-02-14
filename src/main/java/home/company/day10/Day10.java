@@ -1,9 +1,11 @@
 package home.company.day10;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Day10 {
     Scanner scanner = new Scanner(System.in);
+    Random random = new Random();
     /**
      * 1 .Print all integer numbers from 1 to 10.
      */
@@ -274,6 +276,32 @@ public class Day10 {
 //        }
 //        System.out.println(years);
 //    } //Todo
+
+    /**
+     * 16.Write a program that generates a random number and asks the user
+     * to guess what the number is. If the user’s guess is higher than the
+     * random number, the program should display Too high, try again. If the
+     * user’s guess is lower than the random number, the program should
+     * display Too low, try again. If you find the number print Yes, you
+     * guessed the number.The program should use a loop that repeats
+     * until the user correctly guesses the random number.
+     */
+//    public void randNum(int numbers) {
+//        numbers = random.nextInt(20);
+//        int number;
+//        while (true) {
+//             number = scanner.nextInt();
+//            if (number < numbers) {
+//                System.out.println(" Too low, try again.");
+//            } else if (number > numbers) {
+//                System.out.println(" Too high, try again");
+//            } else {
+//                System.out.println(" Yes, you guessed the number.");
+//                break;
+//            }
+//        }
+//    }
+
     /**
      *17. Write a Java Program to Compute the Sum of Digits in a given
      * Integer.
