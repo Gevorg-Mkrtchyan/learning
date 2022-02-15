@@ -240,18 +240,18 @@ public class Day10 {
      * }
      * 20
      */
-    public void athlete() {
-        float x = scanner.nextFloat();
-        float y = scanner.nextFloat();
-        int count = 1;
-
-        while (x < y) {
-            x = (float) 1.1 * x;
-            count++;
-            System.out.print(x + "\t");
-        }
-        System.out.println("\n" + count);
-    }
+//    public void athlete() {
+//        float x = scanner.nextFloat();
+//        float y = scanner.nextFloat();
+//        int count = 1;
+//
+//        while (x < y) {
+//            x = (float) 1.1 * x;
+//            count++;
+//            System.out.print(x + "\t");
+//        }
+//        System.out.println("\n" + count);
+//    }
     /**
      *14.The deposit in the bank is x dollars. It increases annually by p
      * percent, after which the fractional part of cents is discarded.
@@ -309,7 +309,6 @@ public class Day10 {
 //            }
 //        }
 //        System.out.println(second);
-//
 //    }
     /**
      * 16.Write a program that generates a random number and asks the user
