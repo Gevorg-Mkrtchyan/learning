@@ -14,10 +14,11 @@ public class TestDay10 {
 //        day10.smallPow(5); // task 9
 //        day10.changeChar(); //task 10
 //        day10.notMultiple3(5); task 11
-//        day10.fibonacci(5); task 12
-//        day10.athlete(); task 13 //Todo
-//        day10.depositPercent();//14 //Todo
-//        day10.randNum(5);//task16
+//        day10.fibonacci(5); //task 12
+//        day10.athlete(); //task 13
+//        day10.depositPercent();// task 14
+//        day10.DetermineValue();//task 15
+//        day10.randNum(5);// task 16
 //        day10.sumDigits();// task 17
     }
 }

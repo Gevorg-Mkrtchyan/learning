@@ -42,7 +42,7 @@ public class Day10 {
 //    public void squares(int n) {
 //        n = scanner.nextInt();
 //        int num = 1;
-//        while (num * num < n) {
+//        while (num * num <= n) {
 //            System.out.println(num * num);
 //            num++;
 //        }
@@ -75,8 +75,8 @@ public class Day10 {
 //    public void divisor2(int num) {
 //        num = scanner.nextInt();
 //        int m = 1;
-//        while (m * 2 < num) {
-//            m *= 2;
+//        while (m  < num) {
+//            m <<= 1;
 //            System.out.println(m);
 //        }
 //    }
@@ -105,7 +105,7 @@ public class Day10 {
 //    public void allMultiple(int number) {
 //        System.out.println("enter number");
 //        number = scanner.nextInt();
-//        if (number%2 == 0){
+//        if (number%2 != 0){
 //            while (number >= 2){
 //                number-=2;
 //                System.out.println(number);
@@ -174,7 +174,7 @@ public class Day10 {
 //        while (start <= end) {
 //            start++;
 //            if (start % 10 == 2) {
-//                System.out.print(" \n ");
+//                System.out.print("\n");
 //            }
 //            System.out.print(" " + (char) start);
 //        }
@@ -240,16 +240,18 @@ public class Day10 {
      * }
      * 20
      */
-//    public void athlete() {
-//        int count = 0;
-//        double b1 = scanner.nextDouble();
-//        double q = 0.1;
-//        while (q < b1){
-//            q++;
-//            count++;
-//        }
-//        System.out.println(count);
-//    }//Todo
+    public void athlete() {
+        float x = scanner.nextFloat();
+        float y = scanner.nextFloat();
+        int count = 1;
+
+        while (x < y) {
+            x = (float) 1.1 * x;
+            count++;
+            System.out.print(x + "\t");
+        }
+        System.out.println("\n" + count);
+    }
     /**
      *14.The deposit in the bank is x dollars. It increases annually by p
      * percent, after which the fractional part of cents is discarded.
@@ -269,14 +271,46 @@ public class Day10 {
 //        double p = scanner.nextDouble();
 //        System.out.println("enter the years");
 //        double y = scanner.nextDouble();
-//        int years = 0;
-//        while (x< y){
-//            x+=p*x;
+//        int years = 1;
+//        while (x < y) {
+//            x = (float) p * x;
 //            years++;
+//            System.out.print(x + "\t");
 //        }
-//        System.out.println(years);
-//    } //Todo
-
+//        System.out.println("\n" + years);
+//    }
+    /**
+     * 15.The sequence consists of different natural numbers and ends
+     * with the number 0. Determine the value of the second largest
+     * element in this sequence.
+     * (A sequence of natural numbers is introduced, ending with the number 0 (the
+     * number 0 itself is not included in the sequence, but serves as a sign of its
+     * termination)).
+     * Input ` 1 Output` 7
+     * 7
+     * 9
+     * 0
+     */
+//    public void DetermineValue(){
+//                    Scanner scanner = new Scanner(System.in);
+//                    int max = Integer.MIN_VALUE;
+//                    int second = 0;
+//                    int i;
+//                    while (true) {
+//                        i = scanner.nextInt();
+//                        if (i == 0) {
+//                            break;
+//            }
+//            if (i > max) {
+//                second = max;
+//                max = i;
+//            } else if (i > second && i != max) {
+//                second = i;
+//            }
+//        }
+//        System.out.println(second);
+//
+//    }
     /**
      * 16.Write a program that generates a random number and asks the user
      * to guess what the number is. If the user’s guess is higher than the
