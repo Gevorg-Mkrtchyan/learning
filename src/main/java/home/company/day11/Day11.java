@@ -56,9 +56,14 @@ public class Day11 {
 //    public void squares(int a,int b){
 //        a = scanner.nextInt();
 //        b = scanner.nextInt();
-//        for (int i = a; i*i <=b; ) {
-//            System.out.println(i * i);
-//            i++;
+//        if(a<b){
+//            System.out.println("a can't be greater then b");
+//            return;
+//        }
+//        for (int i = a; i<=b;i++ ) {
+//            if (Math.sqrt(i) ==(int)Math.sqrt(i)){
+//                System.out.println(i + " ");
+//            }
 //        }
 //    }
 
@@ -99,7 +104,7 @@ public class Day11 {
      */
 //    public void divisor() {
 //        int n = scanner.nextInt();
-//        for (int i = 2; i * i <= n; ) {
+//        for (int i = 2; i * i <= n;) {
 //            i++;
 //            if (n % 2 == 0) {
 //                System.out.println(2);
@@ -111,7 +116,6 @@ public class Day11 {
 //            }
 //        }
 //    }
-
     /**
      * 7.Given an integer number x
      * Print all natural divisors of the number x in ascending order (including 1
@@ -167,9 +171,8 @@ public class Day11 {
 //        num = scanner.nextInt();
 //        int decimalNum = 0, i = 0;
 //        long remainder;
-//        while (num != 0) {
+//        for (; num != 0; num /= 10) {
 //            remainder = num % 10;
-//            num /= 10;
 //            decimalNum += remainder * Math.pow(2, i);
 //            i++;
 //        }
@@ -205,6 +208,7 @@ public class Day11 {
 //        System.out.println("Zeros count: " + zerosCount + "\n" + "Negative count: " +
 //                negativeCount + "\n" + "Positive count: " + positiveCount);
 //    }
+
     /**
      * 12. &quot;GNCHE-1&quot; is a complex electronic device that issues every second
      * the next sequence number 1, 2, 2, 3, 3, 3, 4, 4, 4, 4, 5 ... Due to the high
@@ -217,22 +221,19 @@ public class Day11 {
      * 5 1 2 2 3 3
      * 7 1 2 2 3 3 3 4
      */
-//     public  void emulator(int num) {
-//         System.out.println("enter the number");
-//         num = scanner.nextInt();
-//        StringBuilder str = new StringBuilder();
+//    public void volte(int num) {
+//        System.out.println("enter the number");
+//        num = scanner.nextInt();
+//        int count = 0;
 //        for (int i = 1; i <= num; i++) {
-//            for (int j = 1; j <= i; j++) {
-//                str.append(i);
-//                if (str.length() == num) {
-//                    break;
+//            for (int j = 0; j < i; j++) {
+//                System.out.print(i);
+//                count++;
+//                if (count == num) {
+//                    return;
 //                }
 //            }
-//            if (str.length() == num) {
-//                break;
-//            }
 //        }
-//        System.out.println(str);
 //    }
     /**
      * 13. Write a Java program by using two for loops to produce the output
@@ -251,10 +252,11 @@ public class Day11 {
 //            System.out.println();
 //        }
 //    }
+
     /**
      * 14.Write a program that prompts the user for the size (a non-negative
      * integer in int); and prints the following checkerboard pattern.
-     *
+     * <p>
      * # # # # # # #       N * N
      * # # # # # # #
      * # # # # # # #
@@ -263,14 +265,16 @@ public class Day11 {
      * # # # # # # #
      * # # # # # # #
      */
-//    public void figure1(int n){
+//    public void figure1(int n) {
 //        n = scanner.nextInt();
 //        for (int i = 0; i <= n; i++) {
 //            for (int j = 0; j <= n; j++) {
-//                if((i%2==1 && j%2==1) || (i%2==0 && j%2==0))
-//                    System.out.print("#");
-//                else
-//                    System.out.print(" ");
+//                if (i % 2 == 0){
+//                    System.out.print("# ");
+//                }
+//                else{
+//                    System.out.print(" #");
+//                }
 //            }
 //            System.out.println();
 //        }

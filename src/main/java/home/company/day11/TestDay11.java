@@ -14,9 +14,9 @@ public class TestDay11 {
 //        day11.calculateNumber(54); //task 9
 //        day11.convertToBinary(5); //task 10
 //        day11.checkNumber(7); //task11
-//        day11.emulator(5); //task12
+//        day11.volte(5); //task12
 //        day11.figureSquare(5); // task 13
-//        day11.figure1(5); //task 14
+        day11.figure1(5); //task 14
 //        day11.multiplicationTable(1); //task15
 //        day11.pattersA(4); //task 16 a
 //        day11.patternsB(5); //task 16 b
