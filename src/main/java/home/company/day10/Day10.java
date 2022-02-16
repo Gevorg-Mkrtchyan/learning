@@ -61,8 +61,8 @@ public class Day10 {
 //        int i = 2;
 //        while (n % i != 0) {
 //            i++;
-//            System.out.println(i);
 //        }
+//        System.out.println(i);
 //    }
 
     /**
@@ -75,9 +75,9 @@ public class Day10 {
 //    public void divisor2(int num) {
 //        num = scanner.nextInt();
 //        int m = 1;
-//        while (m  < num) {
-//            m <<= 1;
+//        while (m  <= num) {
 //            System.out.println(m);
+//            m <<= 1;
 //        }
 //    }
     /**
@@ -105,11 +105,11 @@ public class Day10 {
 //    public void allMultiple(int number) {
 //        System.out.println("enter number");
 //        number = scanner.nextInt();
-//        if (number%2 != 0){
-//            while (number >= 2){
-//                number-=2;
+//        while (number != 0) {
+//            if (number % 2 == 0) {
 //                System.out.println(number);
 //            }
+//            number--;
 //        }
 //    }
 
@@ -279,6 +279,7 @@ public class Day10 {
 //        }
 //        System.out.println("\n" + years);
 //    }
+
     /**
      * 15.The sequence consists of different natural numbers and ends
      * with the number 0. Determine the value of the second largest
@@ -291,15 +292,15 @@ public class Day10 {
      * 9
      * 0
      */
-//    public void DetermineValue(){
-//                    Scanner scanner = new Scanner(System.in);
-//                    int max = Integer.MIN_VALUE;
-//                    int second = 0;
-//                    int i;
-//                    while (true) {
-//                        i = scanner.nextInt();
-//                        if (i == 0) {
-//                            break;
+//    public void DetermineValue() {
+//        Scanner scanner = new Scanner(System.in);
+//        int max = Integer.MIN_VALUE;
+//        int second = 0;
+//        int i;
+//        while (true) {
+//            i = scanner.nextInt();
+//            if (i == 0) {
+//                break;
 //            }
 //            if (i > max) {
 //                second = max;
