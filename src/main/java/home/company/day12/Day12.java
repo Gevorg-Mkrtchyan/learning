@@ -6,6 +6,23 @@ import java.util.Scanner;
 public class Day12 {
     Scanner scanner = new Scanner(System.in);
     Random random = new Random();
+    int n = scanner.nextInt();
+
+    public int[] initArray(int n) {
+        int[] arr = new int[n];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = scanner.nextInt();
+        }
+        return arr;
+    }
+
+    public void print(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+    }
+
+    //          1
 
     /**
      * 1.Print all elements of the array with even indices (that is, A [0], A
@@ -13,38 +30,22 @@ public class Day12 {
      * - Input natural integer N
      * - define an array with size N,
      * - Initialize it
-     * Example  Input 1 2 3 4 5
+     * Example ` Input` 1 2 3 4 5
      * Output` 1 3 5
+     *
+     * @param arr
      */
-    public void printArray1(int[] arr) {
-        for (int num : arr) {
-            System.out.print(num + " ");
-        }
-    }
-
-    public void initArray(int[] arr) {
-        if (arr == null || arr.length == 0) {
-            System.out.println("invalid state of array");
-            return;
-        }
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = random.nextInt(20) - 10;
-        }
-    }
-
-    void printLogic1(int[] arr) {
+    public void arrayLogic1(int[] arr) {
         for (int i = 0; i < arr.length; i += 2) {
             System.out.print(arr[i] + " ");
         }
     }
 
-    public void elementsArray(int n) {
-        n = scanner.nextInt();
-        int[] arr = new int[n];
-        initArray(arr);
-        printArray1(arr);
+    public void array1() {
+        int[] arr = initArray(n);
+        print(arr);
         System.out.println();
-        printLogic1(arr);
+        arrayLogic1(arr);
     }
 
     /**
@@ -52,26 +53,22 @@ public class Day12 {
      * - Input natural integer N
      * - define an array with size N,
      * - Initialize it
-     * Example  Input 1 2 3 4 5 10
+     * Example ` Input` 1 2 3 4 5 10
      * Output` 2 4 10
      */
-    void printLogic2(int[] arr) {
+    public void arrayLogic2(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i] > 0) {
-                if (arr[i] % 2 == 0) {
-                    System.out.print(arr[i] + " ");
-                }
+            if (arr[i] % 2 == 0) {
+                System.out.print(arr[i] + " ");
             }
         }
     }
 
-    public void evenArray(int n) {
-        n = scanner.nextInt();
-        int[] arr = new int[n];
-        initArray(arr);
-        printArray1(arr);
+    public void array2() {
+        int[] arr = initArray(n);
+        print(arr);
         System.out.println();
-        printLogic2(arr);
+        arrayLogic2(arr);
     }
 
     /**
@@ -79,7 +76,7 @@ public class Day12 {
      * Example` Input` 1 -1 2 3 -8
      * Output 1 2 3
      */
-    public void printLogic3(int[] arr) {
+    public void arrayLogic3(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] > 0) {
                 System.out.print(arr[i] + " ");
@@ -87,34 +84,31 @@ public class Day12 {
         }
     }
 
-    public void positiveArray(int n) {
-        int[] arr = new int[n];
-        initArray(arr);
-        printArray1(arr);
+    public void array3() {
+        int[] arr = initArray(n);
+        print(arr);
         System.out.println();
-        printLogic3(arr);
+        arrayLogic3(arr);
     }
 
     /**
      * 4. A list of numbers is given. Print all the elements of the list that are
      * larger than the previous element.
-     * Example` Input  1 5 2 4 3 Output 5 4
+     * Example` Input ` 1 5 2 4 3 Output` 5 4
      */
-    public void printLogic4(int[] arr) {
-        for (int i = 1; i < arr.length - 1; i++) {
-            if (arr[i] >= arr[i - 1] && arr[i] >= arr[i + 1]) {
-                System.out.print(arr[i] + " ");
+    public void arrayLogic4(int[] arr) {
+        for (int i = 0; i < arr.length - 1; i++) {
+            if (arr[i] < arr[i + 1]) {
+                System.out.print(arr[i + 1] + " ");
             }
         }
     }
 
-    public void largestArray(int n) {
-        n = scanner.nextInt();
-        int[] arr = new int[n];
-        initArray(arr);
-        printArray1(arr);
+    public void array4() {
+        int[] arr = initArray(n);
+        print(arr);
         System.out.println();
-        printLogic4(arr);
+        arrayLogic4(arr);
     }
 
     /**
@@ -125,27 +119,19 @@ public class Day12 {
      * Example` Input` -1 2 3 -1 -2
      * Output` 2 3
      */
-    public void printLogic5(int[] arr) {
-        for (int i = 1; i < arr.length - 1; i++) {
-            if (arr[i] > 0 && arr[i + 1] > 0) {
-                System.out.print(arr[i] + " ");
-                System.out.println(arr[i + 1]);
-                return;
-            } else if (arr[i] < 0 && arr[i + 1] < 0) {
-                System.out.print(arr[i] + " ");
-                System.out.println(arr[i + 1]);
-                return;
+    public void arrayLogic5(int[] arr) {
+        for (int i = 0; i < arr.length - 1; i++) {
+            if (arr[i] > 0 && arr[i + 1] > 0 || arr[i] < 0 && arr[i + 1] < 0) {
+                System.out.print(arr[i] + " " + arr[i + 1]);
             }
         }
     }
 
-    public void adjacentNumInArray(int n) {
-        n = scanner.nextInt();
-        int[] arr = new int[n];
-        initArray(arr);
-        printArray1(arr);
+    public void array5() {
+        int[] arr = initArray(n);
+        print(arr);
         System.out.println();
-        printLogic5(arr);
+        arrayLogic5(arr);
     }
 
     /**
@@ -155,107 +141,198 @@ public class Day12 {
      * Example` Input` 1 2 3 2 1
      * Output` The largest is 3 index is 2
      */
-    public void printArray2(int[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " ");
-        }
-    }
-
-    public void printLogic6(int[] arr) {
-        int max = arr[0];
-        for (int i = 1; i < arr.length; i++) {
-            if (arr[i] > max) {
-                max = arr[i];
+    public void arrayLogic6(int[] arr) {
+        int count = 0;
+        int largest = arr[0];
+        for (int i = 0; i < arr.length - 1; i++) {
+            if (largest < arr[i]) {
+                largest = arr[i];
+                count++;
             }
         }
-        System.out.print(max);
+        System.out.println(count);
     }
 
-    public void valueLargeElement(int n) {
-        n = scanner.nextInt();
-        int[] arr = new int[n];
-        initArray(arr);
-        printArray2(arr);
+    public void array6() {
+        int[] arr = initArray(n);
+        print(arr);
         System.out.println();
-        printLogic6(arr);
+        arrayLogic6(arr);
     }
 
     /**
      * 7.Print the value of the smallest of all positive elements in the list. It is
      * known that the list contains at least one positive element, and the
      * absolute value of all elements of the list does not exceed 1000.
-     * Example  Input  5 -4 3 -2 1
+     * Example ` Input ` 5 -4 3 -2 1
      * Output ` 1
      */
-    public void printLogic7(int[] arr) {
-        int min = arr[0];
-        for (int i = 1; i < arr.length; i++) {
-            if (arr[i] < min && min > 0) {
-                min = arr[i];
+    public void arrayLogic7(int[] arr) {
+        int small = 1000;
+        for (int i = 0; i <= arr.length - 1; i++) {
+            if (small > arr[i] && arr[i] > 0) {
+                small = arr[i];
             }
         }
-        System.out.print(min);
+        System.out.println(small);
     }
 
-    public void allPositiveNumSmall(int n) {
-        n = scanner.nextInt();
-        int[] arr = new int[n];
-        initArray(arr);
-        printArray2(arr);
+    public void array7() {
+        int[] arr = initArray(n);
+        print(arr);
         System.out.println();
-        printLogic7(arr);
+        arrayLogic7(arr);
     }
 
     /**
      * 8.You are given a list sorted by non-decreasing elements in it. Determine
      * how many different elements are in it.
-     * Example  Input  1 2 2 3 3 3
+     * Example ` Input ` 1 2 2 3 3 3
      * Output ` 3
      */
-    public void printLogic8(int[] arr) {
-        int res = 1;
-        for (int i = 1; i < arr.length; i++) {
-            int j;
-            for (j = 0; j < i; j++) {
-                if (arr[i] == arr[j]) {
-                    break;
-                }
-            }
-            if (i == j) {
-                res++;
+    public void arrayLogic8(int[] arr) {
+        int count = 0;
+        for (int i = 0; i < arr.length - 1; i++) {
+            if (arr[i] != arr[i + 1]) {
+                count++;
             }
         }
-        System.out.println(res);
+        System.out.println(count);
     }
 
-    public void sumDifferentElements(int n) {
-        n = scanner.nextInt();
-        int[] arr = new int[n];
-        initArray(arr);
-        printArray2(arr);
+    public void array8() {
+        int[] arr = initArray(n);
+        print(arr);
         System.out.println();
-        printLogic8(arr);
+        arrayLogic8(arr);
     }
 
     /**
      * 9.Print the elements of the given list in reverse order without changing
      * the list itself.
-     * Example  Input  1 2 3 4 5
+     * Example ` Input ` 1 2 3 4 5
      * Output ` 5 4 3 2 1
      */
-    public void reverseArray(int n) {
-        n = scanner.nextInt();
-        int[] arr = new int[n];
-        initArray(arr);
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " ");
-        }
-        System.out.println();
-        System.out.println("Array in reverse order: ");
+    public void arrayLogic9(int[] arr) {
         for (int i = arr.length - 1; i >= 0; i--) {
             System.out.print(arr[i] + " ");
         }
     }
+
+    public void array9() {
+        int[] arr = initArray(n);
+        print(arr);
+        System.out.println();
+        arrayLogic9(arr);
+    }
+
+    /**
+     * 10.Rearrange the elements of this array in reverse order, then print the
+     * elements of the resulting array.
+     */
+    public void arrayLogic10(int[] arr) {
+        int n = arr.length - 1;
+        int temp = 0;
+        for (int i = 0; i < arr.length / 2; i++) {
+            temp = arr[i];
+            arr[i] = arr[n];
+            arr[n] = temp;
+            n--;
+        }
+        print(arr);
+    }
+
+    public void array10() {
+        int[] arr = initArray(n);
+        print(arr);
+        System.out.println();
+        arrayLogic10(arr);
+    }
+
+    /**
+     * 11. Rearrange the adjacent elements of the array (A [0] with A [1], A [2]
+     * with A [3], etc.). If there is an odd number of elements, then the last
+     * element remains in its place.
+     * <p>
+     * Example ` Input ` 1 2 3 4 5
+     * Output ` 2 1 4 3 5
+     *
+     * @param arr
+     */
+    public void arrayLogic11(int[] arr) {
+        int temp = 0;
+        for (int i = 0; i <= arr.length - 2; i += 2) {
+            temp = arr[i];
+            arr[i] = arr[i + 1];
+            arr[i + 1] = temp;
+        }
+        print(arr);
+    }
+
+    public void array11() {
+        int[] arr = initArray(n);
+        print(arr);
+        System.out.println();
+        arrayLogic11(arr);
+    }
+
+    /**
+     * 12.Cycle the elements of the array to the right (A [0] goes to A [1], A [1]
+     * to A [2], ..., the last element goes to A [0]).
+     * Example ` Input ` 1 2 3 4 5
+     * Output ` 5 1 2 3 4
+     */
+    public void arrayLogic12(int[] arr) {
+        int temp = 0;
+        for (int i = arr.length - 2; i >= 0; i--) {
+//            temp = arr[i + 1];
+//            arr[i + 1] = arr[i];
+//            arr[i] = temp;
+            temp = arr[i];
+            arr[i] = arr[i + 1];
+            arr[i + 1] = temp;
+        }
+        print(arr);
+    }
+
+    public void array12() {
+        int[] arr = initArray(n);
+        print(arr);
+        System.out.println();
+        arrayLogic12(arr);
+    }
+
+    /**
+     * 13.In the list, all items are different. Swap the minimum and maximum
+     * elements of this list.
+     * Example ` Input ` 3 2 1 4 5
+     * Output ` 3 2 5 4 1
+     */
+    public void arrayLogic13(int[] arr) {
+        int small = 0;
+        int large = 0;
+        int temp = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[large] < arr[i]) {
+                large = i;
+            }
+            if (arr[small] > arr[i]) {
+                small = i;
+            }
+        }
+        temp = arr[large];
+        arr[large] = arr[small];
+        arr[small] = temp;
+        print(arr);
+    }
+
+    public void array13() {
+        int[] arr = initArray(n);
+        print(arr);
+        System.out.println();
+        arrayLogic13(arr);
+    }
+
 }
 
 
