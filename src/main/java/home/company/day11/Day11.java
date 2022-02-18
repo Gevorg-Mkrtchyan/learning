@@ -104,18 +104,16 @@ public class Day11 {
      */
 //    public void divisor() {
 //        int n = scanner.nextInt();
-//        for (int i = 2; i * i <= n;) {
-//            i++;
-//            if (n % 2 == 0) {
-//                System.out.println(2);
-//                break;
-//            } else if (n % i == 0) {
+//        if (n % 2 == 0) {
+//            System.out.println(2);
+//        }
+//        for (int i = 2; i * i <= n;i++) {
+//             if (n % i == 0) {
 //                System.out.println(i);
-//            } else {
-//                System.out.println(n);
 //            }
 //        }
 //    }
+
     /**
      * 7.Given an integer number x
      * Print all natural divisors of the number x in ascending order (including 1
@@ -124,12 +122,12 @@ public class Day11 {
      */
 //    public void powNumber(int number) {
 //        number = scanner.nextInt();
-//        for (int i = 1; i < number; ) {
-//            i <<= 1;
-//            System.out.println(i);
+//        for (int i = 1; i <= number; i++) {
+//            if (number % i == 0) {
+//                System.out.println(i + " ");
+//            }
 //        }
 //    }
-
     /**
      * 8. Given an integer x
      * Count the number of natural divisors of x (including 1 and the number
@@ -137,17 +135,15 @@ public class Day11 {
      */
 //    public void allDivisors(int n) {
 //        n = scanner.nextInt();
-//        for (int i = 1; i <= Math.sqrt(n); i++) {
+//        int count = 0;
+//        for (int i = 1; i <= n; i++) {
 //            if (n % i == 0) {
-//                if (n / i == i) {
-//                    System.out.print(" " + i);
-//                } else {
-//                    System.out.print(i + " " + n / i + " ");
-//                }
+//                System.out.print(i + " ");
+//                count++;
 //            }
 //        }
+//        System.out.println("count = " +count);
 //    }
-
     /**
      * 9.Calculate the sum of the given 10 natural numbers.
      * Input integers from console
@@ -170,7 +166,7 @@ public class Day11 {
 //    public void convertToBinary(int num) {
 //        num = scanner.nextInt();
 //        int decimalNum = 0, i = 0;
-//        long remainder;
+//        int remainder;
 //        for (; num != 0; num /= 10) {
 //            remainder = num % 10;
 //            decimalNum += remainder * Math.pow(2, i);
