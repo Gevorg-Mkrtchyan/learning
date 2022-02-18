@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class Day10 {
     Scanner scanner = new Scanner(System.in);
     Random random = new Random();
+
     /**
      * 1 .Print all integer numbers from 1 to 10.
      */
