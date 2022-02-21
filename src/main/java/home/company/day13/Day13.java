@@ -14,7 +14,6 @@ public class Day13 {
      * - print matrix
      */
 
-
     public void arrayLogic1(int n) {
         int[][] array = new int[n][n];
 
@@ -22,8 +21,6 @@ public class Day13 {
             for (int j = 0; j < array.length; j++) {
                 if (i + j == n - 1) {
                     array[i][j] = 1;
-                } else {
-                    array[i][j] = 0;
                 }
                 System.out.print(array[i][j] + " ");
             }
@@ -35,7 +32,7 @@ public class Day13 {
      * Task 2
      * .Create an n × n array and fill it according to the following rule:
      * - the numbers on the diagonal going from the upper right to the lower left corner are equal to 1;
-     * <p>
+     * <p>6
      * - numbers above this diagonal are equal to 0;
      * - the numbers below this diagonal are equal to 2
      * <p>
@@ -72,8 +69,8 @@ public class Day13 {
 
     public void arrayLogic3() {
         int[][] matrix = {{1, 2, 3},
-                          {2, 5, 4},
-                          {3, 4, 1}};
+                {2, 5, 4},
+                {3, 4, 1}};
 
 
         boolean simmet = false;
