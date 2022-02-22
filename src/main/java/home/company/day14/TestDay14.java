@@ -4,7 +4,7 @@ public class TestDay14 {
     public static void main(String[] args) {
         Day14 day14 = new Day14();
         day14.stringLength(); //task1
-        day14.stringChar();  //task 2
+        day14.stringChar("qwe",0);  //task 2
         System.out.println(day14.containsStr("qwerty", 'p'));//task3
         day14.vowelsCount("ssssrefdidfjeioeif");//task4
         day14.reverseString("qwerty");//task5

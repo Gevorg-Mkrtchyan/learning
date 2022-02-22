@@ -18,14 +18,15 @@ public class Day14 {
      * 2.Write a function which returns a character of a given index,from a given String. Pass as a
      * parameters String str, int index
      */
-    public void stringChar() {
-        System.out.println("enter word");
-        String str = scanner.next();
-        System.out.println("enter index of word");
-        int index = scanner.nextInt();
-        System.out.println(str.charAt(index));
+    public void stringChar(String str,int index) {
+        if (index > str.length()) {
+            System.out.println("enter word");
+            str = scanner.next();
+            System.out.println("enter index of word");
+            index = scanner.nextInt();
+            System.out.println(str.charAt(index));
+        }
     }
-
     /**
      * 3.Write a function which checks if the given String contains a given character.Pass as parameters
      * String str, char ch
