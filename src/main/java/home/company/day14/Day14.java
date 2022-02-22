@@ -236,7 +236,6 @@ public class Day14 {
      * 13.Write a function that returns the first non-repeated character from a given string.
      */
     public char firstNonRepeated(String str) {
-        String s = "";
         for (int i = 0; i < str.length(); i++) {
             if (!containsChar(str.substring(i + 1), str.charAt(i))) {
                 return str.charAt(i);
