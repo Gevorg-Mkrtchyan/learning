@@ -221,7 +221,7 @@ public class Day14 {
      * 12.Write a function that counts duplicate characters from a given string
      */
     public int countDuplicates(String str) {
-        String comparing = " ";
+        String comparing = "";
         for (int i = 0; i < str.length() - 1; i++) {
             for (int j = i + 1; j < str.length(); j++) {
                 if (str.charAt(i) == str.charAt(j) && !containsChar(comparing, str.charAt(i))) {
