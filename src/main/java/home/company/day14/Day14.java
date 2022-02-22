@@ -237,7 +237,7 @@ public class Day14 {
      */
     public char firstNonRepeated(String str) {
         for (int i = 0; i < str.length(); i++) {
-            if (!containsChar(str.substring(i + 1), str.charAt(i))) {
+            if (!containsChar(str.substring(0, i), str.charAt(i)) && !containsChar(str.substring(i + 1), str.charAt(i))) {
                 return str.charAt(i);
             }
         }
