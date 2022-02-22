@@ -9,30 +9,28 @@ public class Day14 {
     /**
      * 1.Write a function which returns the length of a given String.
      */
-    public void stringLength() {
-        String str = scanner.next();
-        System.out.println(str.length());
+    public int stringLength(String str) {
+        return str.length();
     }
+
 
     /**
      * 2.Write a function which returns a character of a given index,from a given String. Pass as a
      * parameters String str, int index
      */
-    public void stringChar(String str, int index) {
-        if (index > str.length()) {
-            System.out.println("enter word");
-            str = scanner.next();
-            System.out.println("enter index of word");
-            index = scanner.nextInt();
-            System.out.println(str.charAt(index));
+    public char aChar(String str, int index) {
+        if (index >= str.length() || index < 0) {
+            System.out.println("invalid" + index);
+            return ' ';
         }
+        return str.charAt(index);
     }
 
     /**
      * 3.Write a function which checks if the given String contains a given character.Pass as parameters
      * String str, char ch
      */
-    public boolean containsStr(String str, char b) {
+    public boolean containsChar(String str, char b) {
         for (int i = 0; i < str.length(); i++) {
             if (str.charAt(i) == b) {
                 return true;
@@ -45,13 +43,18 @@ public class Day14 {
      * 4.Write a function which returns the count of vowels of a given String
      * - - write also an overloaded function which returns count of constants.
      */
-    public int vowelsCount(String str) {
-        String[] strings = {"a", "e", "i", "o", "u"};
-        String s = str.toLowerCase(Locale.ROOT);
+    public int vowelCount(String str) {
         int count = 0;
-        for (int i = 0; i < strings.length; i++) {
-            if (s.contains(strings[i])) {
-                count++;
+        String s = str.toLowerCase(Locale.ROOT);
+        for (int i = 0; i < str.length(); i++) {
+            switch (s.charAt(i)) {
+                case 'a':
+                case 'e':
+                case 'i':
+                case 'o':
+                case 'u':
+                    count++;
+                    break;
             }
         }
         return count;
@@ -62,11 +65,14 @@ public class Day14 {
      * reverse of the String by extracting and processing each character. The output shall look like:
      * Enter a String: abcdef
      * The reverse of the String &quot;abcdef&quot; is &quot;fedcba&quot;
+     *
+     * @return
      */
-    public void reverseString(String str) {
+    public String reverseString(String str) {
         for (int i = str.length() - 1; i >= 0; i--) {
             System.out.print(str.charAt(i));
         }
+        return str;
     }
 
     /**
@@ -80,51 +86,66 @@ public class Day14 {
      * Number of vowels: 2 (16.67%)
      * Number of digits: 5 (41.67%)
      */
+    public int digitsCount(String str) {
+        int count = 0;
+        for (int i = 0; i < str.length(); i++) {
+            switch (str.charAt(i)) {
+                case '0':
+                case '1':
+                case '2':
+                case '3':
+                case '4':
+                case '5':
+                case '6':
+                case '7':
+                case '8':
+                case '9':
+                    count++;
+                    break;
+            }
+        }
+        return count;
+    }
+
     public double persentOf(int a, int len) {
         return (double) a * 100 / len;
     }
 
     public void countVowelsDigits(String str) {
-        int vowelCount = vowelsCount(str);
-        int isDigit = 0;
-        int length = str.length();
-        for (int i = 0; i < length; i++) {
-            if (str.charAt(i) > '0' && str.charAt(i) <= '9') {
-                isDigit++;
-            }
-        }
-        double vowel = persentOf(vowelCount, length);
-        double digits = persentOf(isDigit, length);
-        System.out.printf("Vowal is %.2f %% , digit is %.2f %%", vowel, digits);
+        int digitCount = digitsCount(str);
+        int vowelCount = vowelCount(str);
+        int len = str.length();
+        double digit = persentOf(digitCount, len);
+        double vowel = persentOf(vowelCount, len);
+        System.out.printf("Vowel is %.2f %% , digit is %.2f %%", vowel, digit);
     }
 
     /**
-     * 7.Caesar&#39;s Code is one of the simplest encryption techniques. Each letter in the plaintext is
-     * replaced by a letter with some fixed number of positions (n) down the alphabet cyclically. In this
-     * exercise, we shall pick n=3. That is, &#39;A&#39; is replaced by &#39;D&#39;, &#39;B&#39; by &#39;E&#39;, &#39;C&#39; by &#39;F&#39;, ..., &#39;X&#39; by
-     * &#39;A&#39;, ..., &#39;Z&#39; by &#39;C&#39;.
-     * Write a function called caesarCode to cipher Caesar&#39;s code. The program shall prompt the user
-     * for a plaintext string consisting of mix-case letters only; compute the ciphertext; and print the
-     * ciphertext in uppercase. For example,
+     * 7.Caesar's Code is one of the simplest encryption techniques. Each letter in
+     * the plaintext is replaced by a letter with some fixed number of positions (n) down the alphabet cyclically.
+     * In this exercise, we shall pick n=3. That is, 'A' is replaced by 'D', 'B' by 'E', 'C' by 'F', ..., 'X' by 'A', ...,
+     * 'Z' by 'C'.
+     * Write a function called caesarCode to cipher Caesar's code. The program shall prompt the user for a plaintext
+     * string consisting of mix-case letters only; compute the ciphertext; and print the ciphertext in uppercase.
+     * For example,
      * Enter a plaintext string: Testing
      * The ciphertext string is: WHVWLQJ
      * Hints
-     * 1. Use in.next().toUpperCase() to read an input string and convert it into uppercase to reduce the
-     * number of cases.
-     * 2. You can use a big nested-if with 26 cases (&#39;A&#39;-&#39;Z&#39;). But it is much better to consider &#39;A&#39; to &#39;W&#39; as
-     * one case; &#39;X&#39;, &#39;Y&#39; and &#39;Z&#39; as 3 separate cases.
+     * Use in.next().toUpperCase() to read an input string and convert it into uppercase to reduce the number of cases.
+     * You can use a big nested-if with 26 cases ('A'-'Z'). But it is much better to consider 'A' to 'W' as one
+     * case; 'X', 'Y' and 'Z' as 3 separate cases.
      */
-    public void caesarCode(String str) {
-        String s = "";
+    public void caesarCode(String str, int n) {
+        StringBuilder output = new StringBuilder();
         for (int i = 0; i < str.length(); i++) {
-            char ch = (char) (str.charAt(i) + 3);
-            if (str.equals("x") || str.equals("y") || str.equals("z")) {
-                System.out.println("error");
-                return;
+            if (str.charAt(i) <= 122 - n) {
+                output.append((char) (str.charAt(i) + n));
+            } else {
+                int dif = n - (122 - str.charAt(i) + 1);
+                output.append((char) (97 + dif));
             }
-            s += ch;
         }
-        System.out.println(s);
+        System.out.println(output.toString().toUpperCase(Locale.ROOT));
     }
 
     /**
@@ -133,20 +154,8 @@ public class Day14 {
      * A word that reads the same backward as forward is called a palindrome, e.g.,
      * "mom", "dad", "racecar", "madam", and "Radar" (case-insensitive).
      */
-    public void palindrome() {
-        System.out.println("please enter word");
-        String str = scanner.next();
-        StringBuilder reverseStr = new StringBuilder();
-        int strLength = str.length();
-        for (int i = (strLength - 1); i >= 0; --i) {
-            reverseStr.append(str.charAt(i));
-        }
-        if (str.equalsIgnoreCase(reverseStr.toString())) {
-            System.out.println(str + " is a Palindrome String.");
-        } else {
-            System.out.println(str + " is not a Palindrome String.");
-        }
-
+    public boolean palindrome(String str) {
+        return str.equalsIgnoreCase(reverseString(str));
     }
 
     /**
@@ -199,10 +208,8 @@ public class Day14 {
             for (int i = str.length() - 1; i >= 0; i--) {
                 if (str.charAt(i) == '1') {
                     dec += Math.pow(2, power);
-                    power++;
-                } else {
-                    power++;
                 }
+                power++;
             }
             System.out.print(str + " is ");
             return dec;
@@ -215,29 +222,27 @@ public class Day14 {
      */
     public int countDuplicates(String str) {
         String comparing = " ";
-        int count = 0;
-        for (int i = 0; i < str.length(); i++) {
+        for (int i = 0; i < str.length() - 1; i++) {
             for (int j = i + 1; j < str.length(); j++) {
-                if (str.charAt(i) == str.charAt(j) && !containsStr(comparing, str.charAt(i))) {
-                    count++;
+                if (str.charAt(i) == str.charAt(j) && !containsChar(comparing, str.charAt(i))) {
                     comparing += str.charAt(i);
                 }
             }
         }
-        return count;
+        return comparing.length();
     }
 
     /**
      * 13.Write a function that returns the first non-repeated character from a given string.
      */
-    public String firstNonRepeated(String str) {
+    public char firstNonRepeated(String str) {
         String s = "";
         for (int i = 0; i < str.length(); i++) {
-            if (!containsStr(str.substring(i + 1), str.charAt(i))) {
-                return str.charAt(i) + s;
+            if (!containsChar(str.substring(i + 1), str.charAt(i))) {
+                return str.charAt(i);
             }
         }
-        return s;
+        return ' ';
     }
 
     /**
