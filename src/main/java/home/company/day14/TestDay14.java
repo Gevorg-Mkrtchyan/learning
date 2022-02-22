@@ -13,7 +13,7 @@ public class TestDay14 {
         day14.palindrome();//task8
         System.out.println(day14.checkBinStr("0101010101")); //task9
         System.out.println(day14.hexadecimal("123a"));//task10
-        System.out.println(day14.binaryConvertToDecimal("101"));//task11
+        System.out.println(day14.binaryConvertToDecimal("1015"));//task11
         System.out.println(day14.countDuplicates("qwertty")); //task12
         System.out.println(day14.firstNonRepeated("qwewq"));//task 13
         System.out.println(day14.charCount("qqwweerrr", 'r')); // task14

@@ -18,7 +18,7 @@ public class Day14 {
      * 2.Write a function which returns a character of a given index,from a given String. Pass as a
      * parameters String str, int index
      */
-    public void stringChar(String str,int index) {
+    public void stringChar(String str, int index) {
         if (index > str.length()) {
             System.out.println("enter word");
             str = scanner.next();
@@ -27,6 +27,7 @@ public class Day14 {
             System.out.println(str.charAt(index));
         }
     }
+
     /**
      * 3.Write a function which checks if the given String contains a given character.Pass as parameters
      * String str, char ch
@@ -191,8 +192,22 @@ public class Day14 {
      * error: invalid binary string "1234"
      */
     public int binaryConvertToDecimal(String str) {
-        int num = Integer.parseInt(str, 2);
-        return num;
+        boolean isBim = checkBinStr(str);
+        if (isBim) {
+            int dec = 0;
+            int power = 0;
+            for (int i = str.length() - 1; i >= 0; i--) {
+                if (str.charAt(i) == '1') {
+                    dec += Math.pow(2, power);
+                    power++;
+                } else {
+                    power++;
+                }
+            }
+            System.out.print(str + " is ");
+            return dec;
+        }
+        return -1;
     }
 
     /**
