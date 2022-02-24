@@ -8,13 +8,11 @@ public class Day16 {
      * Display the calculated value (1 <= N <= 15).
      */
     public int naturalNumber(int n) {
-        if (1 <= n && n <= 15) {
-            n = (int) Math.pow(2, n);
-            return n;
+        if (n < 1 || n > 15) {
+            return -1;
         }
-        return -1;
+        return (int) Math.pow(2, n);
     }
-
     /**
      * 4.Given number n. N minutes have passed since the beginning of the day. Determine how many hours and minutes the
      * digital clock will show at this moment. The program should print two numbers: the number of hours (from 0 to 23)
@@ -113,26 +111,22 @@ public class Day16 {
      * OXOXOXOX
      * XOXOXOXO
      */
-    public void printXOr0(int n) {
+    public char[][] printXOr0(int n) {
+        char [][]board = new char[n][n];
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
-                if (i % 2 == 0) {
-                    if (j % 2 != 0) {
-                        System.out.print("X");
-                    } else {
-                        System.out.print("0");
-                    }
-                } else {
-                    if (j % 2 != 0) {
-                        System.out.print("0");
-                    } else {
-                        System.out.print("X");
-                    }
+                if ((i + j)%2 == 0){
+                    board[i][j] = '0';
+                }
+                else {
+                    board[i][j] = 'X';
                 }
             }
-            System.out.println();
         }
+        return board;
     }
+
+
 
     /**
      * 9.The first term and the denominator of the geometric progression are given (real numbers b1 and q, q! = 0).
@@ -145,7 +139,7 @@ public class Day16 {
      * 4
      */
     public double geometric(double number, double multipl, int step) {
-        for (int i = 0; i < step - 1; i++) {
+        for (int i = 1; i < step; i++) {
             number *= multipl;
         }
         return number;
