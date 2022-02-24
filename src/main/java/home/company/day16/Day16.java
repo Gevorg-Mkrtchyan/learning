@@ -13,6 +13,7 @@ public class Day16 {
         }
         return (int) Math.pow(2, n);
     }
+
     /**
      * 4.Given number n. N minutes have passed since the beginning of the day. Determine how many hours and minutes the
      * digital clock will show at this moment. The program should print two numbers: the number of hours (from 0 to 23)
@@ -46,10 +47,10 @@ public class Day16 {
      * 4.Write a java program to determine whether the number is prime or not.
      */
     public boolean prime(int number) {
-        if (number <=1){
+        if (number <= 1) {
             return false;
         }
-        if (number >2 && number % 2 == 0) {
+        if (number > 2 && number % 2 == 0) {
             return false;
         }
         for (int i = 3; i < number / 2; i += 2)
@@ -112,20 +113,18 @@ public class Day16 {
      * XOXOXOXO
      */
     public char[][] printXOr0(int n) {
-        char [][]board = new char[n][n];
+        char[][] board = new char[n][n];
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
-                if ((i + j)%2 == 0){
+                if ((i + j) % 2 == 0) {
                     board[i][j] = '0';
-                }
-                else {
+                } else {
                     board[i][j] = 'X';
                 }
             }
         }
         return board;
     }
-
 
 
     /**
