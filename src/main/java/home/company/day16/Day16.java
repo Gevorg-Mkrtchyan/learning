@@ -48,7 +48,10 @@ public class Day16 {
      * 4.Write a java program to determine whether the number is prime or not.
      */
     public boolean prime(int number) {
-        if (number > 0 && number % 2 == 0) {
+        if (number <=1){
+            return false;
+        }
+        if (number >2 && number % 2 == 0) {
             return false;
         }
         for (int i = 3; i < number / 2; i += 2)

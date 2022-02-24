@@ -5,7 +5,7 @@ public class TestDay16 {
         Day16 day16 = new Day16();
 //        System.out.println(day16.naturalNumber(16));//task 1
 //        day16.dayTime(150); // task2
-//        System.out.println(day16.prime(25)); //task4
+//        System.out.println(day16.prime(12)); //task4
 //        day16.palindromeNumber(1600, 2100);//task5
 //        System.out.println(day16.upString("CAR"));//task6
 //        day16.printXOr0(3);//task7
