@@ -77,15 +77,16 @@ public class Day17 {
         return arr.length;
     }
 
-    public int search(int[] arr, int index) {
-        return arr[index];
+    public int search(int[] array, int a) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == a)
+                return i;
+        }
+        return -1;
     }
 
-    public boolean search(int[] arr, int index, int x) {
-        if (arr[index] == arr[x]) {
-            return true;
-        }
-        return false;
+    public boolean search(int[] array, int argument, int index) {
+        return array[index] == argument;
     }
 
     /**
@@ -117,47 +118,29 @@ public class Day17 {
     }
 
     public int max(int a, int b, int c) {
-        if (a >= b && a >= c) {
-            return a;
-        } else if (b >= a && b >= c) {
-            return b;
-        }
-        return c;
+        return max(max(a, b), c);
     }
 
     public int max(int a, int b, int c, int d) {
-        if (a >= b && a >= c && a >= d) {
-            return a;
-        } else if (b >= a && b >= c && b >= d) {
-            return b;
-        } else if (c >= a && c >= b && c >= d) {
-            return c;
-        }
-        return d;
+        return max(max(a, b, c), d);
     }
+
     /**
-     *8.Write a distance() function which
+     * 8.Write a distance() function which
      * -         return distance from (0.0 , 0.0) to (a)
      * distance(int x1 , int x2, int x3, int x4) where (x1, x2) are the coordinates of a
      * distance(int, int)
      * -return the distance from a to be, if method distance get 4 int parameters
      */
-    public  double distance(int x1, int y1, int x2, int y2) {
+    public double distance(int x1, int y1, int x2, int y2) {
         return Math.sqrt(Math.pow(x2 - x1, 2) +
                 Math.pow(y2 - y1, 2));
     }
-    public String distance(){
-        return "don't print distance in 0 parameters ";
-    }
-    public String distance(int x1){
-        return "don't print distance in 1 parameters ";
-    }
-    public String distance(int x1,int x2){
+
+    public String distance(int x1, int x2) {
         return "don't print distance in 2 parameters ";
     }
-    public String distance(int x1,int y1,int x2){
-        return "don't print distance in 3 parameters ";
-    }
+
     /**
      * 9.Write a fahrenheitCelsius() function which
      * -         prints fahrenheit value  when pass (float celsius, int choice), where choice is the type of fahrenheit`
@@ -180,6 +163,7 @@ public class Day17 {
     public void fahrenheitCelsius(int choice, int celsius) {
         System.out.println("illegal argument");
     }
+
     /**
      * 10.Write a function` remainder() which
      * -         when pass one int value, return sum of digits for that value remainder(int)
@@ -187,14 +171,19 @@ public class Day17 {
      * second parameter(reminder(int 331, int 5) {
      * return  (3 + 3 + 1) % 5
      */
-    public int remainder(int number){
-        return number/100%10%10 + number/10%10 + number%10;
-    }
-    public int remainder(int number,int naturalNumber){
-        if (naturalNumber <0){
+    public int remainder(int n) {
+        int sum = 0;
+        if (n < 0) {
             return -1;
         }
-        return remainder(number)%naturalNumber;
+        while (n > 0) {
+            sum += n % 10;
+            n /= 10;
+        }
+        return sum;
+    }
+
+    public double remainder(int n, int sec) {
+        return remainder(n) % sec;
     }
 }
-
