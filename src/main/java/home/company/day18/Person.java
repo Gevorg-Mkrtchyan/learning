@@ -29,11 +29,11 @@ public class Person {
     }
 
     public Person(String firstName, String lastName, String passportId, String gender, int age, String nation) {
-        this.setFirstName(firstName);
-        this.setLastName(lastName);
-        this.setPassportId(passportId);
-        this.setGender(gender);
-        this.setAge(age);
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.passportId = passportId;
+        this.gender = gender;
+        this.age = age;
         this.nation = nation;
     }
 
@@ -42,11 +42,7 @@ public class Person {
     }
 
     public void setFirstName(String firstName) {
-        if (firstName.length() < 3 || firstName.length() > 15) {
-            System.out.println("invalid firstName");
-        } else {
-            this.firstName = firstName;
-        }
+        this.firstName = firstName;
     }
 
     public String getLastName() {
@@ -54,11 +50,7 @@ public class Person {
     }
 
     public void setLastName(String lastName) {
-        if (lastName.length() < 6 || lastName.length() > 20) {
-            System.out.println("invalid lastName");
-        } else {
-            this.lastName = lastName;
-        }
+        this.lastName = lastName;
     }
 
     public String getPassportId() {
@@ -66,19 +58,7 @@ public class Person {
     }
 
     public void setPassportId(String passportId) {
-        int len = passportId.length();
-        boolean isDigit = true;
-        for (int i = 3; i < len - 2; i++) {
-            if (passportId.charAt(i) < '0' || passportId.charAt(i) > '9') {
-                isDigit = false;
-                break;
-            }
-        }
-        if (passportId.substring(0, 2).equals("AN") && len == 8 && isDigit) {
-            this.passportId = passportId;
-        } else {
-            System.out.println("Invalid passport ID");
-        }
+        this.passportId = passportId;
     }
 
     public String getGender() {
@@ -86,23 +66,16 @@ public class Person {
     }
 
     public void setGender(String gender) {
-        if (gender.compareToIgnoreCase("Male") != 0 && gender.compareToIgnoreCase("Female") != 0) {
-            System.out.println("invalid gender");
-        } else {
-            this.gender = gender;
-        }
+        this.gender = gender;
     }
+
 
     public int getAge() {
         return age;
     }
 
     public void setAge(int age) {
-        if (age < 18 || age > 99) {
-            System.out.println("invalid age");
-        } else {
-            this.age = age;
-        }
+        this.age = age;
     }
 
     public String getNation() {
