@@ -1,4 +1,4 @@
-package home.company.day18;
+package home.company.day18.example;
 
 /**
  * Write a Person.java class which `
