@@ -13,11 +13,11 @@ public class TestDay18 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         //task1,2
+        int age;
         String firstName;
         String lastName;
         String passportId;
         String gender;
-        int age;
         String nation;
         System.out.println("enter first name");
         while (true) {
