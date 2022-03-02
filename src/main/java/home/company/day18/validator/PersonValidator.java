@@ -38,7 +38,7 @@ public final class PersonValidator {
         }
         int len = passportId.length();
         boolean isDigit = true;
-        for (int i = 3; i < len -2 ; i++) {
+        for (int i = 2; i < len; i++) {
             if (passportId.charAt(i) < '0' || passportId.charAt(i) > '9') {
                 isDigit = false;
                 break;
