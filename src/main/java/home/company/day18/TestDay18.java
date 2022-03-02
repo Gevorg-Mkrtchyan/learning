@@ -75,7 +75,7 @@ public class TestDay18 {
             System.out.println("enter sideA");
             while (true) {
                 sideA = scanner.nextInt();
-                if (TriangleValidator.validSideA(sideA)) {
+                if (TriangleValidator.validSide(sideA)) {
                     break;
                 } else {
                     System.out.println("invalid sideA try again");
@@ -84,7 +84,7 @@ public class TestDay18 {
             System.out.println("enter sideB");
             while (true) {
                 sideB = scanner.nextInt();
-                if (TriangleValidator.validSideB(sideB)) {
+                if (TriangleValidator.validSide(sideB)) {
                     break;
                 } else {
                     System.out.println("invalid sideB try again");
@@ -93,7 +93,7 @@ public class TestDay18 {
             System.out.println("enter sideC");
             while (true) {
                 sideC = scanner.nextInt();
-                if (TriangleValidator.validSideC(sideC)) {
+                if (TriangleValidator.validSide(sideC)) {
                     break;
                 } else {
                     System.out.println("invalid sideC try again");

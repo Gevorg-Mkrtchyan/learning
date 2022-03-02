@@ -7,17 +7,8 @@ public class TriangleValidator {
 
     }
 
-    public static boolean validSideA(int sideA) {
-        return sideA > 1 && sideA < 20;
-    }
-
-    public static boolean validSideB(int sideB) {
-        return sideB > 1 && sideB < 20;
-    }
-
-    public static boolean validSideC(int sideC) {
-        return sideC > 1 && sideC < 20;
-
+    public static boolean validSide(int side) {
+        return side > 1 && side < 20;
     }
     public static boolean check(Triangle triangle){
         return  isValidTriangle(triangle);
@@ -31,11 +22,8 @@ public class TriangleValidator {
                 && triangle.getSideB() + triangle.getSideC() > triangle.getSideA();
     }
     public static boolean isTriangle(Triangle triangle){
-       if (triangle.getSideC() == Math.sqrt(Math.pow(triangle.getSideA(), 2)+ Math.pow(triangle.getSideB(), 2)) ||
-               triangle.getSideA() == Math.sqrt(Math.pow(triangle.getSideC(), 2)+ Math.pow(triangle.getSideB(), 2)) ||
-               triangle.getSideB() == Math.sqrt(Math.pow(triangle.getSideA(), 2)+ Math.pow(triangle.getSideC(), 2))){
-           return true;
-       }
-       return false;
+        return triangle.getSideC() == Math.sqrt(Math.pow(triangle.getSideA(), 2) + Math.pow(triangle.getSideB(), 2)) ||
+                triangle.getSideA() == Math.sqrt(Math.pow(triangle.getSideC(), 2) + Math.pow(triangle.getSideB(), 2)) ||
+                triangle.getSideB() == Math.sqrt(Math.pow(triangle.getSideA(), 2) + Math.pow(triangle.getSideC(), 2));
     }
 }

@@ -26,18 +26,24 @@ public final class PersonValidator {
     }
 
     public static boolean validGender(String gender) {
+        if (gender == null){
+            return false;
+        }
         return gender.compareToIgnoreCase("Male") == 0 || gender.compareToIgnoreCase("Female") == 0;
     }
 
     public static boolean validPassportId(String passportId) {
+        if (passportId == null){
+            return false;
+        }
         int len = passportId.length();
         boolean isDigit = true;
-        for (int i = 3; i < len - 2; i++) {
+        for (int i = 3; i < len -2 ; i++) {
             if (passportId.charAt(i) < '0' || passportId.charAt(i) > '9') {
                 isDigit = false;
                 break;
             }
         }
-        return passportId.substring(0, 2).equals("AN") && len == 8 && isDigit;
+        return passportId.charAt(0) == 'A' && passportId.charAt(1) == 'N' && len == 8 && isDigit;
     }
 }
