@@ -1,13 +1,22 @@
 package home.company.day21.task4;
 
 public class Square implements Shape {
-    @Override
-    public String area() {
-        return " Square area ";
+    private int side;
+
+    public Square(int side) {
+        this.side = side;
+    }
+
+    public Square() {
     }
 
     @Override
-    public String perimeter() {
-        return " Square perimeter ";
+    public double area() {
+        return side * side;
+    }
+
+    @Override
+    public double perimeter() {
+        return 2 * (side + side);
     }
 }

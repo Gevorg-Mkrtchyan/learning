@@ -1,7 +1,7 @@
 package home.company.day21.task4;
 
 public interface Shape {
-    String area();
+    double area();
 
-    String perimeter();
+    double perimeter();
 }
