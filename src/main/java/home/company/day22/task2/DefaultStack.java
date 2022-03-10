@@ -4,11 +4,11 @@ import java.util.Scanner;
 
 public class DefaultStack implements Stack {
     private static final int MAX_SIZE = 5;
-    private static int[] nums = new int[MAX_SIZE];
+    private final  int[] nums ;
     private int index;
 
-    public DefaultStack(final int[] nums) {
-        DefaultStack.nums = nums;
+    public DefaultStack() {
+        this.nums = new int[MAX_SIZE];
     }
 
     @Override
@@ -31,7 +31,7 @@ public class DefaultStack implements Stack {
 
     public static void main(String[] args) throws StackIndexOutOfBoundsException {
         Scanner scanner = new Scanner(System.in);
-        DefaultStack defaultStack = new DefaultStack(new int[5]);
+        DefaultStack defaultStack = new DefaultStack();
         defaultStack.push(scanner.nextInt());
         defaultStack.push(scanner.nextInt());
         defaultStack.push(scanner.nextInt());
