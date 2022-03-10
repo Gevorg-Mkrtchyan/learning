@@ -25,8 +25,10 @@ public class DefaultStack implements Stack {
         if (index == 0) {
             throw new EmptyStackException("empty");
         }
+        int val = nums[index -1];
+        nums[index - 1] =0;
         index--;
-        return nums[index];
+        return val;
     }
 
     public static void main(String[] args) throws StackIndexOutOfBoundsException {
