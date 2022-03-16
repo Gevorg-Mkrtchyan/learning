@@ -19,6 +19,6 @@ public class TestDay10 {
 //        day10.depositPercent();// task 14
 //        day10.DetermineValue();//task 15
 //        day10.randNum(5);// task 16
-//        day10.sumDigits();// task 17
+        day10.sumDigits();// task 17
     }
 }

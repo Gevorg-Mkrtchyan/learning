@@ -341,16 +341,16 @@ public class Day10 {
      *17. Write a Java Program to Compute the Sum of Digits in a given
      * Integer.
      */
-//    public void sumDigits(){
-//        int a = scanner.nextInt();
-//        int b;
-//        int c = 0;
-//        while (a != 0){
-//         b = a %10;
-//         c = c + b;
-//         a = a/10;
-//        }
-//        System.out.println("Sum of Digits:"+c);
-//    }
+    public void sumDigits(){
+        int a = scanner.nextInt();
+        int b;
+        int c = 0;
+        while (a != 0){
+         b = a %10;
+         c = c + b;
+         a = a/10;
+        }
+        System.out.println("Sum of Digits:"+c);
+    }
 }
 
