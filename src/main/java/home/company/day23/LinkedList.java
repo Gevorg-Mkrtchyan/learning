@@ -1,11 +1,17 @@
 package home.company.day23;
 
+import java.util.Iterator;
+
 public class LinkedList implements List {
     private int size;
 
     private static class Node {
         private final int val;
         private Node next;
+
+        public Node(int val) {
+            this.val = val;
+        }
 
         public Node(int val, Node next) {
             this.val = val;
@@ -27,55 +33,54 @@ public class LinkedList implements List {
 
     @Override
     public int getIndex(int index) {
-        Node node = head;
+        Node top = head;
         for (int i = 0; i < index; i++) {
-            node = node.next;
+            top = top.next;
         }
-        return node.val;
+        return top.val;
     }
 
     @Override
     public void add(int val) {
-        if (head == null) {
-            head = new Node(val, null);
-            size++;
-            return;
+        Node newNode = new Node(val);
+        if (size == 0) {
+            head = newNode;
+        } else {
+            Node node = head;
+            while (node.next != null) {
+                node = node.next;
+            }
+            node.next = newNode;
         }
-        Node node = head;
-        while (node.next != null)
-            node = node.next;
-        node.next = new Node(val, null);
         size++;
-
     }
 
     @Override
     public void add(int index, int val) {
+        if (index < 0 || index > size) {
+            throw new IndexOutOfBoundsException("invalid index = " + index);
+        }
         if (head == null) {
-            head = new Node(val, null);
-            size++;
-            return;
+            head = new Node(val);
         }
 
         if (index == 0) {
             head = new Node(val, head);
             return;
+        } else {
+            Node node = head;
+            for (int i = 0; i < index - 1; i++) {
+                node = node.next;
+            }
+            node.next = new Node(val, node.next);
         }
-        Node node = head;
-        for (int i = 0; i < index - 1; i++) {
-            node = node.next;
-        }
-        node.next = new Node(val, node.next);
         size++;
-
     }
 
     @Override
     public void delete(int index) {
         if (index == 0) {
             head = head.next;
-            size--;
-            return;
         }
         Node node = head;
         for (int i = 0; i < index - 1; i++) {
@@ -88,10 +93,31 @@ public class LinkedList implements List {
     @Override
     public String toString() {
         StringBuilder s = new StringBuilder("[");
-        for (int i = 0; i < this.size - 1; i++) {
+        for (int i = 0; i < this.size; i++) {
             s.append(this.getIndex(i)).append("->");
         }
-        s.append(this.getIndex(size - 1)).append(("->null")).append("]");
+        s.append(("null]"));
         return s.toString();
+    }
+
+    @Override
+    public Iterator<Integer> iterator() {
+        return new ListIterator();
+    }
+
+    private class ListIterator implements Iterator<Integer> {
+        Node node = head;
+
+        @Override
+        public boolean hasNext() {
+            return node != null;
+        }
+
+        @Override
+        public Integer next() {
+            int value = node.val;
+            node = node.next;
+            return value;
+        }
     }
 }
