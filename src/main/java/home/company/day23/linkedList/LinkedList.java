@@ -1,4 +1,6 @@
-package home.company.day23;
+package home.company.day23.linkedList;
+
+import home.company.day23.linkedList.List;
 
 import java.util.Iterator;
 

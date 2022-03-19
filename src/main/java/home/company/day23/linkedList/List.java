@@ -1,4 +1,4 @@
-package home.company.day23;
+package home.company.day23.linkedList;
 
 public interface List extends Iterable <Integer>{
     int size();
