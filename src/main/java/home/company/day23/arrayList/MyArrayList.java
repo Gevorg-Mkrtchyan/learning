@@ -3,9 +3,9 @@ package home.company.day23.arrayList;
 import java.util.Iterator;
 
 public class MyArrayList implements MyList {
-    private int size;
-    private static final int CAPACITY = 10;
-    private Integer[] value = new Integer[CAPACITY];
+    private static int size;
+    private static final int DEFAULT_CAPACITY = 10;
+    private static Integer[] value = new Integer[DEFAULT_CAPACITY];
 
     @Override
     public boolean isEmpty() {
@@ -51,6 +51,8 @@ public class MyArrayList implements MyList {
 
     @Override
     public int get(int index) {
+        if (index >= size)
+            throw new IndexOutOfBoundsException();
         return value[index];
     }
 
@@ -62,25 +64,20 @@ public class MyArrayList implements MyList {
 
     @Override
     public Iterator<Integer> iterator() {
-        return new ArrayIterator(value);
+        return new ArrayIterator();
     }
 
     private static class ArrayIterator implements Iterator<Integer> {
         private int index;
-        private final Integer[] values;
-
-        public ArrayIterator(Integer[] values) {
-            this.values = values;
-        }
 
         @Override
         public boolean hasNext() {
-            return index < values.length;
+            return index <size;
         }
 
         @Override
         public Integer next() {
-            return values[index++];
+            return value[index++];
         }
     }
 }
