@@ -1,4 +1,4 @@
-package home.company.day25;
+package home.company.day24;
 
 import java.util.*;
 
@@ -35,6 +35,7 @@ public class MyArrayListUtil {
                 System.out.print(entry.getKey() + " ");
         }
     }
+
 
     /**
      * 3 Write a method that counts duplicate characters

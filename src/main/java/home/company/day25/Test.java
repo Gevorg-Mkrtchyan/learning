@@ -1,21 +1,20 @@
 package home.company.day25;
 
-import java.util.ArrayList;
-
 public class Test {
     public static void main(String[] args) {
-        ArrayList<Integer> arrayList = new ArrayList<>();
-        arrayList.add(1);
-        arrayList.add(2);
-        arrayList.add(3);
-        arrayList.add(3);
-        arrayList.add(4);
-        arrayList.add(5);
-        int n = arrayList.size();
-        System.out.println(MyArrayListUtil.isDuplicate(arrayList)); // task 1
-        MyArrayListUtil.printElement(arrayList, n); // task 2
-        System.out.println(MyArrayListUtil.doubleElemCount("abab"));  // task 3
-        System.out.println(MyArrayListUtil.firsNonRepeatedCharacter("ababc")); // task 4
-        System.out.println(MyArrayListUtil.lengthLongestWithoutCharacters("abcdaefjh")); // task 5
+//        int[] arr = {1, 2, 3, 4, 5};
+//        int len = arr.length;
+//        System.out.println(Day25.sumArray(arr, len));
+//        System.out.println(Day25.factorial(5));
+//        System.out.println(Day25.fibonacci(7));
+//        System.out.println(Day25.sumNumber(5));
+//        System.out.println(Day25.digitsSum(111));
+//        System.out.println(Day25.countOf7(7077));
+//        System.out.println(Day25.countOfX("xxxfdsfdsjsadfolkawrfnwefnjeWFhiou;x"));
+//        System.out.println(Day25.removeOfX("qwex"));
+//        System.out.println(Day25.replace("qwe"));
+//        System.out.println(Day25.endOfX("xqxxwe"));
+//        System.out.println(Day25.cleanedDuplicateCharOfString("aadd"));
+        System.out.println(Day25.isPrime(9, 2));
     }
 }
