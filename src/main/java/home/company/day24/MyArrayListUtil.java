@@ -65,7 +65,6 @@ public class MyArrayListUtil {
         }
         return ' ';
     }
-
     /**
      * Write a method which will return the length of
      * the longest substring without repeating
