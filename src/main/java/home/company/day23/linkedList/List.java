@@ -5,7 +5,7 @@ public interface List extends Iterable <Integer>{
 
     boolean Empty();
 
-    int getIndex(int index);
+    int get(int index);
 
     void add(int val);
 

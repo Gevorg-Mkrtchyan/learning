@@ -1,11 +1,11 @@
 package home.company.day23.linkedList;
 
-import home.company.day23.linkedList.List;
-
 import java.util.Iterator;
 
 public class LinkedList implements List {
     private int size;
+    private Node head;
+
 
     private static class Node {
         private final int val;
@@ -21,8 +21,6 @@ public class LinkedList implements List {
         }
     }
 
-    private Node head;
-
     @Override
     public int size() {
         return size;
@@ -34,7 +32,7 @@ public class LinkedList implements List {
     }
 
     @Override
-    public int getIndex(int index) {
+    public int get(int index) {
         Node top = head;
         for (int i = 0; i < index; i++) {
             top = top.next;
@@ -62,10 +60,6 @@ public class LinkedList implements List {
         if (index < 0 || index > size) {
             throw new IndexOutOfBoundsException("invalid index = " + index);
         }
-        if (head == null) {
-            head = new Node(val);
-        }
-
         if (index == 0) {
             head = new Node(val, head);
             return;
@@ -96,7 +90,7 @@ public class LinkedList implements List {
     public String toString() {
         StringBuilder s = new StringBuilder("[");
         for (int i = 0; i < this.size; i++) {
-            s.append(this.getIndex(i)).append("->");
+            s.append(this.get(i)).append("->");
         }
         s.append(("null]"));
         return s.toString();
