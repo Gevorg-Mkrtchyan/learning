@@ -2,7 +2,7 @@ package home.company.day24;
 
 import java.util.*;
 
-public class MyArrayListUtil {
+public class Day24 {
     /**
      * 1  Write a method which will check if given array
      * of integers contains duplicate element.
@@ -56,27 +56,42 @@ public class MyArrayListUtil {
      * 4 Write a method that returns the first non-
      * repeated character from a given string.
      */
-    public static char firsNonRepeatedCharacter(String string) {
-        for (int i = 0; i < string.length(); i++) {
-            char str = string.charAt(i);
-            if (string.indexOf(str) == i && string.indexOf(str, i + 1) == -1) {
-                return str;
+    public static void firsNonRepeatedCharacter(String stirng) {
+        int length = stirng.length();
+
+        Map<Character, Integer> map = new HashMap<>();
+        for (int i = 0; i < length; i++) {
+            if (map.containsKey(stirng.charAt(i))) {
+                map.put(stirng.charAt(i), 2);
+                continue;
+            }
+            map.put(stirng.charAt(i), 1);
+        }
+        for (int i = 0; i < length; i++) {
+            if (map.get(stirng.charAt(i)) == 1) {
+                System.out.println(stirng.charAt(i));
+                break;
             }
         }
-        return ' ';
     }
+
     /**
      * Write a method which will return the length of
      * the longest substring without repeating
      * characters.
      * “abba” – 2, “abcdaefjh” – 8
      */
-    public static int lengthLongestWithoutCharacters(String str) {
-        Set<Character> set = new HashSet<>();
-        for (int i = 0; i < str.length(); i++) {
-            set.add((str.charAt(i)));
+    public static int lengthLongestWithoutCharacters(String string) {
+        HashMap<Character, Integer> map = new HashMap<>();
+        int maximumLength = 0;
+        int start = 0;
+        for (int end = 0; end < string.length(); end++) {
+            if (map.containsKey(string.charAt(end))) {
+                start = Math.max(start, map.get(string.charAt(end)) + 1);
+            }
+            map.put(string.charAt(end), end);
+            maximumLength = Math.max(maximumLength, end - start + 1);
         }
-        return set.size();
+        return maximumLength;
     }
-
 }

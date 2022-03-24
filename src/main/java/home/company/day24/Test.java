@@ -12,10 +12,10 @@ public class Test {
         arrayList.add(4);
         arrayList.add(5);
         int n = arrayList.size();
-        System.out.println(MyArrayListUtil.isDuplicate(arrayList)); // task 1
-        MyArrayListUtil.printElement(arrayList, n); // task 2
-        System.out.println(MyArrayListUtil.doubleElemCount("abab"));  // task 3
-        System.out.println(MyArrayListUtil.firsNonRepeatedCharacter("ababc")); // task 4
-        System.out.println(MyArrayListUtil.lengthLongestWithoutCharacters("abcdaefjh")); // task 5
+        System.out.println(Day24.isDuplicate(arrayList)); // task 1
+        Day24.printElement(arrayList, n); // task 2
+        System.out.println(Day24.doubleElemCount("abab"));  // task 3
+        Day24.firsNonRepeatedCharacter("ababc"); // task 4
+        System.out.println(Day24.lengthLongestWithoutCharacters("abcdaefjh")); // task 5
     }
 }

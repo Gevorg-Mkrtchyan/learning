@@ -164,8 +164,92 @@ public class Day25 {
             return true;
         return isPrime(n, i + 1);
     }
+
     /**
      * 12.Given a string containing only decimal digits. Find and display the largest digit.
      */
- //todo
+    public static int largestDigit(String str) {
+        if (str.length() == 0) {
+            return 0;
+        }
+        if (str.charAt(0) == str.charAt(str.length() - 1)) {
+            return str.charAt(0);
+        }
+
+        if (str.charAt(0) > str.charAt(str.length() - 1)) {
+            return str.charAt(0) + largestDigit(str.substring(1));
+        }
+        return largestDigit(str.substring(1));
+    }
+
+    /**
+     * 13.You are given a string containing numbers and English letters
+     * (uppercase and lowercase). Find and display the number of digits.
+     */
+    public static int countDigitsNumber(String str) {
+        if (str.length() == 0) {
+            return 0;
+        }
+        if (str.charAt(0) > '0' && str.charAt(0) < '9') {
+            return 1 + countDigitsNumber(str.substring(1));
+        }
+        return countDigitsNumber(str.substring(1));
+    }
+
+    /**
+     * 14.Given a string containing only English letters (uppercase and
+     * lowercase). Add the ‘*’ (asterisk) character between letters (you don’t
+     * need to add ‘*’ before the first letter and after the last).
+     * Example ` LItBeoFLcSGBOFQxMHoIuDDWcqcVgkcRoAeocXO
+     * L*I*t*B*e*o*F*L*c*S*G*B*O*F*Q*x*M*H*o*I*u*D*D*W*c*q*c*V*g*k*c*R*o*A*e*o*c*X*O
+     */
+    public static String addInLetter(String str) {
+        if (str.length() - 1 == 0) {
+            return str.charAt(0) + "";
+        }
+        return str.charAt(0) + "*" + addInLetter(str.substring(1));
+    }
+
+    /**
+     *15.Given a string containing only English letters (uppercase and lowercase). Add opening and closing
+     * parentheses according to the following pattern: "example" -> "(e (x (a (m) p) l) e)" (Added opening
+     * parentheses to the middle, closing parentheses after the middle. In case the string length is even
+     *there must be 2 characters in the brackets in the middle. ("card -> (c (ar) d)" but not "(c (a () r) d)").
+     * Example`
+     * LItBeoFLcSGBOFQxMHoIuDDWcqcVgkcRoAeocXO
+     *
+     * (L(I(t(B(e(o(F(L(c(S(G(B(O(F(Q(x(M(H(o(I)u)D)D)W)c)q)c)V)g)k)c)R)o)A)e)o)c)X)O)
+     * opening and closing parentheses
+     */
+    public static String addParentheses(String str, int len) {
+        if (str.length() == 0)
+            return ")";
+        if (str.length() > len / 2) {
+            return "(" + str.charAt(0) + addParentheses(str.substring(1), len);
+        }
+        if (str.length() == len / 2 && len % 2 == 0) {
+            return str.charAt(0) + addParentheses(str.substring(1), len);
+        }
+        return ")" + str.charAt(0) + addParentheses(str.substring(1), len);
+    }
+    /**
+     * 16.Given a string containing only English letters (uppercase and lowercase) and opening brackets
+     * . Form a new line by adding a "mirrored" line with closing brackets to the right.
+     * "(abc (def (g " -> "(abc (def (gg) fed) cba)"
+     */
+    public static String replacePlusPlus(String str) {
+        if (str.length() == 0) {
+            return "";
+        }
+        return str + replace(str);
+    }
+    /**
+     * 17 .Given a string containing only small English letters. Form a new line by "cutting"
+     * identical letters located at symmetrical places (that is, if there are 2 identical letters a
+     * t the same distance from the center of the line, then they must be removed from the line). If
+     * the length of the string is odd, then the middle letter does not need to be shortened.
+     */
+    public static String symmetricalWord(String str){
+        return "";
+    }
 }
