@@ -19,7 +19,7 @@ public class Day26 {
      * 2. Write a method that takes an array of T type and converts it to a list of type T.
      */
     public static <T> List<T> convertListInArray(T[] arr) {
-        return new ArrayList<>(Arrays.asList(arr));
+        return Arrays.asList(arr);
     }
 
     /**
@@ -47,7 +47,7 @@ public class Day26 {
      * copy(nums, ints);
      * But not for this` copy(ints, nums);
      */
-    public static <T> void copy(List<? super T> list1,List<T> list2){
+    public static <T> void copy(List<? super T> list1, List<T> list2) {
         list1.addAll(list2);
     }
 }

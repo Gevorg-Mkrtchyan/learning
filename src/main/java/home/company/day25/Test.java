@@ -22,6 +22,6 @@ public class Test {
 //        String str = "abcd";
 //        int len = str.length();
 //        System.out.println(Day25.addParentheses("abcd",len)); // task 15
-        System.out.println(Day25.replacePlusPlus("asd"));
+        System.out.println(Day25.reversePlusPlus("asd"));
     }
 }

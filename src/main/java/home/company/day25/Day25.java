@@ -106,15 +106,16 @@ public class Day25 {
         return str.charAt(0) + removeOfX(str.substring(1));
     }
 
+
     /**
      * 8.Write recursive function that reverses the given String.
      * Example` HELLO -> OLLEH
      */
-    public static String replace(String str) {
+    public static String reverse(String str) {
         if (str.length() == 0) {
             return "";
         }
-        return str.charAt(str.length() - 1) + replace(str.substring(0, str.length() - 1));
+        return str.charAt(str.length() - 1) + reverse(str.substring(0, str.length() - 1));
     }
 
     /**
@@ -156,12 +157,15 @@ public class Day25 {
      * 11.Write a function to determine if a number is prime or not.
      */
     public static boolean isPrime(int n, int i) {
-        if (n <= 2)
+        if (n <= 2) {
             return n == 2;
-        if (n % i == 0)
+        }
+        if (n % i == 0) {
             return false;
-        if (i * i > n)
+        }
+        if (i * i > n) {
             return true;
+        }
         return isPrime(n, i + 1);
     }
 
@@ -170,16 +174,9 @@ public class Day25 {
      */
     public static int largestDigit(String str) {
         if (str.length() == 0) {
-            return 0;
+            return Integer.MIN_VALUE;
         }
-        if (str.charAt(0) == str.charAt(str.length() - 1)) {
-            return str.charAt(0);
-        }
-
-        if (str.charAt(0) > str.charAt(str.length() - 1)) {
-            return str.charAt(0) + largestDigit(str.substring(1));
-        }
-        return largestDigit(str.substring(1));
+        return Math.max(str.charAt(0)-48,largestDigit(str.substring(1)));
     }
 
     /**
@@ -211,13 +208,13 @@ public class Day25 {
     }
 
     /**
-     *15.Given a string containing only English letters (uppercase and lowercase). Add opening and closing
+     * 15.Given a string containing only English letters (uppercase and lowercase). Add opening and closing
      * parentheses according to the following pattern: "example" -> "(e (x (a (m) p) l) e)" (Added opening
      * parentheses to the middle, closing parentheses after the middle. In case the string length is even
-     *there must be 2 characters in the brackets in the middle. ("card -> (c (ar) d)" but not "(c (a () r) d)").
+     * there must be 2 characters in the brackets in the middle. ("card -> (c (ar) d)" but not "(c (a () r) d)").
      * Example`
      * LItBeoFLcSGBOFQxMHoIuDDWcqcVgkcRoAeocXO
-     *
+     * <p>
      * (L(I(t(B(e(o(F(L(c(S(G(B(O(F(Q(x(M(H(o(I)u)D)D)W)c)q)c)V)g)k)c)R)o)A)e)o)c)X)O)
      * opening and closing parentheses
      */
@@ -232,24 +229,26 @@ public class Day25 {
         }
         return ")" + str.charAt(0) + addParentheses(str.substring(1), len);
     }
+
     /**
      * 16.Given a string containing only English letters (uppercase and lowercase) and opening brackets
      * . Form a new line by adding a "mirrored" line with closing brackets to the right.
      * "(abc (def (g " -> "(abc (def (gg) fed) cba)"
      */
-    public static String replacePlusPlus(String str) {
+    public static String reversePlusPlus(String str) {
         if (str.length() == 0) {
             return "";
         }
-        return str + replace(str);
+        return str + reverse(str);
     }
+
     /**
      * 17 .Given a string containing only small English letters. Form a new line by "cutting"
      * identical letters located at symmetrical places (that is, if there are 2 identical letters a
      * t the same distance from the center of the line, then they must be removed from the line). If
      * the length of the string is odd, then the middle letter does not need to be shortened.
      */
-    public static String symmetricalWord(String str){
+    public static String symmetricalWord(String str) {
         return "";
     }
 }
